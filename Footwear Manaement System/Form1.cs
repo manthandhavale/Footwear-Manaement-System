@@ -129,5 +129,10 @@ namespace Footwear_Manaement_System
             regform.Show();
             this.Hide();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

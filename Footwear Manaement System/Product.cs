@@ -12,9 +12,43 @@ namespace Footwear_Manaement_System
 {
     public partial class Product : UserControl
     {
-        public Product()
+        private Men _men;
+        private Women _women;
+        private Kids _kids;
+        public Product(Men men, Women women, Kids kids)
         {
             InitializeComponent();
+            _men = men;
+            _women = women;
+            _kids = kids;
+        }
+
+        public void RefreshData()
+        {
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)RefreshData);
+                return;
+            }
+            //displayCustomerData();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            _men.Visible = true;
+            this.Visible = false;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            _women.Visible = true;
+            this.Visible = false;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            _kids.Visible = true;
+            this.Visible = false;
         }
     }
 }

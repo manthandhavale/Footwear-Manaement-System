@@ -202,7 +202,7 @@ namespace Footwear_Manaement_System
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-            {
+            { 
                 DialogResult check = MessageBox.Show("Are you sure you want to UPDATE " +
                     "Employee ID: " + addEmployee_id.Text.Trim() + "?", "Confirmation Message"
                     , MessageBoxButtons.YesNo, MessageBoxIcon.Information);

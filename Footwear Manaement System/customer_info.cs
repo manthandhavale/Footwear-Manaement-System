@@ -65,10 +65,10 @@ namespace Footwear_Manaement_System
                         connect.Open();
                         string checkCustID = "SELECT COUNT(*) FROM customer WHERE customer_id = @custID AND delete_date IS NULL";
 
-                        using (SqlCommand checkcust = new SqlCommand(checkCustID, connect))
+                        using (SqlCommand checkCust = new SqlCommand(checkCustID, connect))
                         {
-                           // checkcust.Parameters.AddWithValue("@custID",Customer_id.Text.Trim());
-                            int count = (int)checkcust.ExecuteScalar();
+                           checkCust.Parameters.AddWithValue("@custID",addCustomer_id.Text.Trim());
+                            int count = (int)checkCust.ExecuteScalar();
 
                             if (count >= 1)
                             {
@@ -80,9 +80,9 @@ namespace Footwear_Manaement_System
                                 DateTime today = DateTime.Today;
                                 string insertData = "INSERT INTO customer " +
                                     "(customer_id, full_name, address, contact_number" +
-                                    ", email, order) " +
+                                    ", email, bill) " +
                                     "VALUES(@customerID, @fullName, @address, @contactNum" +
-                                    ", @email, @oder)";
+                                    ", @email, @bill)";
 
 
 
@@ -93,7 +93,7 @@ namespace Footwear_Manaement_System
                                     cmd.Parameters.AddWithValue("@address", addCustomer_Address.Text.Trim());
                                     cmd.Parameters.AddWithValue("@contactNum", addCustomer_phoneNum.Text.Trim());
                                     cmd.Parameters.AddWithValue("@email", addCustomer_Email.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@order", 0);
+                                    cmd.Parameters.AddWithValue("@bill", 0);
                                     cmd.Parameters.AddWithValue("@insertDate", today);
 
 
@@ -127,11 +127,11 @@ namespace Footwear_Manaement_System
             if (e.RowIndex != -1)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                addCustomer_id.Text = row.Cells[1].Value.ToString();
-                addCustomer_fullName.Text = row.Cells[2].Value.ToString();
-                addCustomer_Address.Text = row.Cells[3].Value.ToString();
-                addCustomer_phoneNum.Text = row.Cells[4].Value.ToString();
-                addCustomer_Email.Text = row.Cells[5].Value.ToString();
+                addCustomer_id.Text = row.Cells[0].Value.ToString();
+                addCustomer_fullName.Text = row.Cells[1].Value.ToString();
+                addCustomer_Address.Text = row.Cells[2].Value.ToString();
+                addCustomer_phoneNum.Text = row.Cells[3].Value.ToString();
+                addCustomer_Email.Text = row.Cells[4].Value.ToString();
 
             }
         }
@@ -154,11 +154,11 @@ namespace Footwear_Manaement_System
         private void addCustomer_updateBtn_Click(object sender, EventArgs e)
         {
             if (addCustomer_id.Text == ""
-      || addCustomer_fullName.Text == ""
-      || addCustomer_Address.Text == ""
-      || addCustomer_phoneNum.Text == ""
-      || addCustomer_Email.Text == ""
-        )
+                 || addCustomer_fullName.Text == ""
+                 || addCustomer_Address.Text == ""
+                 || addCustomer_phoneNum.Text == ""
+                 || addCustomer_Email.Text == ""
+                 )
             {
                 MessageBox.Show("Please fill all blank fields"
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -166,7 +166,7 @@ namespace Footwear_Manaement_System
             else
             {
                 DialogResult check = MessageBox.Show("Are you sure you want to UPDATE " +
-                    "Employee ID: " + addCustomer_id.Text.Trim() + "?", "Confirmation Message"
+                    "Customer ID: " + addCustomer_id.Text.Trim() + "?", "Confirmation Message"
                     , MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 if (check == DialogResult.Yes)
@@ -176,11 +176,11 @@ namespace Footwear_Manaement_System
                         connect.Open();
                         DateTime today = DateTime.Today;
 
-                        string updateData = "UPDATE INTO customer " +
-                                   "(customer_id, full_name, address, contact_number" +
-                                   ", email, order) " +
-                                   "VALUES(@customerID, @fullName, @address, @contactNum" +
-                                   ", @email, @oder)";
+                        string updateData = "UPDATE  customer SET" +
+                                           " full_name = @fullName, address = @address," +
+                                           "contact_number = @contactNum," +
+                                           " email = @email " +
+                                           "Where customer_id = @customerID";
 
                         using (SqlCommand cmd = new SqlCommand(updateData, connect))
                         {
@@ -189,7 +189,6 @@ namespace Footwear_Manaement_System
                             cmd.Parameters.AddWithValue("@address", addCustomer_Address.Text.Trim());
                             cmd.Parameters.AddWithValue("@contactNum", addCustomer_phoneNum.Text.Trim());
                             cmd.Parameters.AddWithValue("@email", addCustomer_Email.Text.Trim());
-                            cmd.Parameters.AddWithValue("@order", 0);
                             cmd.Parameters.AddWithValue("@insertDate", today);
 
                             cmd.ExecuteNonQuery();
@@ -224,11 +223,11 @@ namespace Footwear_Manaement_System
         private void addCustomer_deleteBtn_Click(object sender, EventArgs e)
         {
             if (addCustomer_id.Text == ""
-      || addCustomer_fullName.Text == ""
-      || addCustomer_Address.Text == ""
-      || addCustomer_phoneNum.Text == ""
-      || addCustomer_Email.Text == ""
-        )
+                 || addCustomer_fullName.Text == ""
+                 || addCustomer_Address.Text == ""
+                 || addCustomer_phoneNum.Text == ""
+                 || addCustomer_Email.Text == ""
+                 )
             {
                 MessageBox.Show("Please fill all blank fields"
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainform));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Product_btn = new System.Windows.Forms.Button();
             this.Salary_btn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.supplier_info_btn = new System.Windows.Forms.Button();
@@ -43,14 +44,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.supplier_info2 = new Footwear_Manaement_System.Supplier_info();
+            this.customer_info2 = new Footwear_Manaement_System.customer_info();
+            this.women1 = new Footwear_Manaement_System.Women();
+            this.kids1 = new Footwear_Manaement_System.Kids();
+            this.men1 = new Footwear_Manaement_System.Men();
+            this.bill1 = new Footwear_Manaement_System.Bill();
+            this.warehouse1 = new Footwear_Manaement_System.warehouse();
             this.supplier_info1 = new Footwear_Manaement_System.Supplier_info();
             this.dashbord1 = new Footwear_Manaement_System.dashboard1();
             this.addEmployee1 = new Footwear_Manaement_System.AddEmployee();
             this.salary1 = new Footwear_Manaement_System.Salary();
-            this.Product_btn = new System.Windows.Forms.Button();
+            this.product1= new Product(men1,women1,kids1);
+            this.customer_info1 = new Footwear_Manaement_System.customer_info();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,6 +85,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(183, 852);
             this.panel1.TabIndex = 0;
+            // 
+            // Product_btn
+            // 
+            this.Product_btn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Product_btn.FlatAppearance.BorderSize = 0;
+            this.Product_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Product_btn.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Product_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.Product_btn.Image = ((System.Drawing.Image)(resources.GetObject("Product_btn.Image")));
+            this.Product_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Product_btn.Location = new System.Drawing.Point(0, 483);
+            this.Product_btn.Name = "Product_btn";
+            this.Product_btn.Size = new System.Drawing.Size(183, 47);
+            this.Product_btn.TabIndex = 9;
+            this.Product_btn.Text = "Product                 ";
+            this.Product_btn.UseVisualStyleBackColor = true;
+            this.Product_btn.Click += new System.EventHandler(this.Product_btn_Click);
+            this.Product_btn.Leave += new System.EventHandler(this.Product_btn_Leave);
             // 
             // Salary_btn
             // 
@@ -232,7 +258,6 @@
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -266,31 +291,46 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel3.Controls.Add(this.button8);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(183, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1180, 144);
             this.panel3.TabIndex = 1;
             // 
-            // button8
+            // label3
             // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.Red;
-            this.button8.Location = new System.Drawing.Point(1135, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 31);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "x";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("MingLiU-ExtB", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(208, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(721, 120);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "MR Footwear";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(1136, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 29);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "X";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.supplier_info2);
+            this.panel5.Controls.Add(this.customer_info2);
+            this.panel5.Controls.Add(this.women1);
+            this.panel5.Controls.Add(this.kids1);
+            this.panel5.Controls.Add(this.men1);
+            this.panel5.Controls.Add(this.bill1);
+            this.panel5.Controls.Add(this.warehouse1);
+            this.panel5.Controls.Add(this.product1);
             this.panel5.Controls.Add(this.supplier_info1);
             this.panel5.Controls.Add(this.dashbord1);
             this.panel5.Controls.Add(this.addEmployee1);
@@ -302,14 +342,68 @@
             this.panel5.TabIndex = 2;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // supplier_info2
+            // customer_info2
             // 
-            this.supplier_info2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.supplier_info2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.supplier_info2.Location = new System.Drawing.Point(0, 0);
-            this.supplier_info2.Name = "supplier_info2";
-            this.supplier_info2.Size = new System.Drawing.Size(1180, 708);
-            this.supplier_info2.TabIndex = 4;
+            this.customer_info2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.customer_info2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customer_info2.Location = new System.Drawing.Point(0, 0);
+            this.customer_info2.Name = "customer_info2";
+            this.customer_info2.Size = new System.Drawing.Size(1180, 708);
+            this.customer_info2.TabIndex = 10;
+            // 
+            // women1
+            // 
+            this.women1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.women1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.women1.Location = new System.Drawing.Point(0, 0);
+            this.women1.Name = "women1";
+            this.women1.Size = new System.Drawing.Size(1180, 708);
+            this.women1.TabIndex = 9;
+            // 
+            // kids1
+            // 
+            this.kids1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.kids1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kids1.Location = new System.Drawing.Point(0, 0);
+            this.kids1.Name = "kids1";
+            this.kids1.Size = new System.Drawing.Size(1180, 708);
+            this.kids1.TabIndex = 8;
+            // 
+            // men1
+            // 
+            this.men1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.men1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.men1.Location = new System.Drawing.Point(0, 0);
+            this.men1.Name = "men1";
+            this.men1.Size = new System.Drawing.Size(1180, 708);
+            this.men1.TabIndex = 7;
+            // 
+            // bill1
+            // 
+            this.bill1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.bill1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bill1.Location = new System.Drawing.Point(0, 0);
+            this.bill1.Name = "bill1";
+            this.bill1.Size = new System.Drawing.Size(1180, 708);
+            this.bill1.TabIndex = 6;
+            // 
+            // warehouse1
+            // 
+            this.warehouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.warehouse1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.warehouse1.Location = new System.Drawing.Point(0, 0);
+            this.warehouse1.Name = "warehouse1";
+            this.warehouse1.Size = new System.Drawing.Size(1180, 708);
+            this.warehouse1.TabIndex = 5;
+            // 
+            // product1
+            // 
+            this.product1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.product1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.product1.Location = new System.Drawing.Point(0, 0);
+            this.product1.Name = "product1";
+            this.product1.Size = new System.Drawing.Size(1180, 708);
+            this.product1.TabIndex = 4;
             // 
             // supplier_info1
             // 
@@ -350,21 +444,13 @@
             this.salary1.Size = new System.Drawing.Size(1180, 708);
             this.salary1.TabIndex = 0;
             // 
-            // Product_btn
+            // customer_info1
             // 
-            this.Product_btn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Product_btn.FlatAppearance.BorderSize = 0;
-            this.Product_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Product_btn.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Product_btn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.Product_btn.Image = ((System.Drawing.Image)(resources.GetObject("Product_btn.Image")));
-            this.Product_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Product_btn.Location = new System.Drawing.Point(0, 483);
-            this.Product_btn.Name = "Product_btn";
-            this.Product_btn.Size = new System.Drawing.Size(183, 47);
-            this.Product_btn.TabIndex = 9;
-            this.Product_btn.Text = "Product                 ";
-            this.Product_btn.UseVisualStyleBackColor = true;
+            this.customer_info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.customer_info1.Location = new System.Drawing.Point(0, 0);
+            this.customer_info1.Name = "customer_info1";
+            this.customer_info1.Size = new System.Drawing.Size(1180, 708);
+            this.customer_info1.TabIndex = 0;
             // 
             // Mainform
             // 
@@ -386,6 +472,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -406,15 +493,23 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button supplier_info_btn;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Panel panel5;
         private AddEmployee addEmployee1;
         private Salary salary1;
         private dashboard1 dashbord1;
         private System.Windows.Forms.Button Salary_btn;
-        private Supplier_info supplier_info2;
+       // private Supplier_info supplier_info2;
         private Supplier_info supplier_info1;
         private customer_info customer_info1;
         private System.Windows.Forms.Button Product_btn;
+        private Product product1;
+        private warehouse warehouse1;
+        private Kids kids1;
+        private Men men1;
+        private Bill bill1;
+        private Women women1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private customer_info customer_info2;
     }
 }

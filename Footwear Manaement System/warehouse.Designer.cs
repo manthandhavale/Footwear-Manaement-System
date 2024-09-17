@@ -50,6 +50,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.addQuantity = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addProduct_picture)).BeginInit();
             this.panel1.SuspendLayout();
@@ -60,6 +62,8 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.addQuantity);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.addBrand);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.addSize);
@@ -142,7 +146,7 @@
             // 
             // addModel_No
             // 
-            this.addModel_No.Location = new System.Drawing.Point(169, 101);
+            this.addModel_No.Location = new System.Drawing.Point(169, 92);
             this.addModel_No.Name = "addModel_No";
             this.addModel_No.Size = new System.Drawing.Size(221, 22);
             this.addModel_No.TabIndex = 14;
@@ -163,6 +167,7 @@
             this.addStock_clearBtn.TabIndex = 13;
             this.addStock_clearBtn.Text = "Clear";
             this.addStock_clearBtn.UseVisualStyleBackColor = false;
+            this.addStock_clearBtn.Click += new System.EventHandler(this.addStock_clearBtn_Click);
             // 
             // addStock_deleteBtn
             // 
@@ -180,6 +185,7 @@
             this.addStock_deleteBtn.TabIndex = 12;
             this.addStock_deleteBtn.Text = "Delete";
             this.addStock_deleteBtn.UseVisualStyleBackColor = false;
+            this.addStock_deleteBtn.Click += new System.EventHandler(this.addStock_deleteBtn_Click);
             // 
             // addStock_updateBtn
             // 
@@ -197,6 +203,7 @@
             this.addStock_updateBtn.TabIndex = 11;
             this.addStock_updateBtn.Text = "Update";
             this.addStock_updateBtn.UseVisualStyleBackColor = false;
+            this.addStock_updateBtn.Click += new System.EventHandler(this.addStock_updateBtn_Click);
             // 
             // addStock_addBtn
             // 
@@ -214,6 +221,7 @@
             this.addStock_addBtn.TabIndex = 10;
             this.addStock_addBtn.Text = "Add";
             this.addStock_addBtn.UseVisualStyleBackColor = false;
+            this.addStock_addBtn.Click += new System.EventHandler(this.addStock_addBtn_Click);
             // 
             // addStock_importBtn
             // 
@@ -230,6 +238,7 @@
             this.addStock_importBtn.TabIndex = 9;
             this.addStock_importBtn.Text = "Import";
             this.addStock_importBtn.UseVisualStyleBackColor = false;
+            this.addStock_importBtn.Click += new System.EventHandler(this.addStock_importBtn_Click);
             // 
             // addProduct_picture
             // 
@@ -265,7 +274,7 @@
             "Men",
             "Women",
             "Kids"});
-            this.addCategory.Location = new System.Drawing.Point(169, 160);
+            this.addCategory.Location = new System.Drawing.Point(169, 144);
             this.addCategory.Name = "addCategory";
             this.addCategory.Size = new System.Drawing.Size(222, 24);
             this.addCategory.TabIndex = 5;
@@ -274,7 +283,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 163);
+            this.label4.Location = new System.Drawing.Point(27, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 21);
             this.label4.TabIndex = 4;
@@ -284,7 +293,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 96);
+            this.label3.Location = new System.Drawing.Point(18, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 21);
             this.label3.TabIndex = 3;
@@ -321,12 +330,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 58);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 60);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1084, 288);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -337,6 +347,23 @@
             this.label1.Size = new System.Drawing.Size(150, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Stock Data :-";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(526, 165);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 21);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Quanttity :-";
+            // 
+            // addQuantity
+            // 
+            this.addQuantity.Location = new System.Drawing.Point(665, 164);
+            this.addQuantity.Name = "addQuantity";
+            this.addQuantity.Size = new System.Drawing.Size(222, 22);
+            this.addQuantity.TabIndex = 20;
             // 
             // warehouse
             // 
@@ -381,5 +408,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox addQuantity;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -34,6 +34,18 @@ namespace Footwear_Manaement_System
             InitializeComponent();
 
             Region =System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            dashbord1.Visible = false;
+            addEmployee1.Visible = false;
+            salary1.Visible = false;
+            supplier_info1.Visible = false;
+            customer_info1.Visible = false;
+            bill1.Visible = false;
+            product1.Visible = false;
+            men1.Visible = false;
+            kids1.Visible = false;
+            women1.Visible = false;
+            warehouse1.Visible = false;
+            customer_info2.Visible = false; 
 
         }
 
@@ -44,9 +56,18 @@ namespace Footwear_Manaement_System
             panel4.Left = AddEmployee_btn.Left;
             AddEmployee_btn.BackColor = Color.FromArgb(46, 51, 73);
 
+           
             dashbord1.Visible = false;
-            addEmployee1.Visible=true;
-            salary1.Visible=false;
+            addEmployee1.Visible = true;
+            salary1.Visible = false;
+            supplier_info1.Visible = false;
+            customer_info1.Visible = false;
+            bill1.Visible = false;
+            product1.Visible = false;
+            men1.Visible = false;
+            kids1.Visible = false;
+            warehouse1.Visible = false;
+            customer_info2.Visible = false;
 
             AddEmployee addEmForm = addEmployee1 as AddEmployee;
             if (addEmForm != null)
@@ -63,10 +84,21 @@ namespace Footwear_Manaement_System
             dashbord__btn.BackColor = Color.FromArgb(46, 51, 73);
 
             dashbord1.Visible = true;
-            addEmployee1.Visible = false ;
+            addEmployee1.Visible = false;
             salary1.Visible = false;
+            supplier_info1.Visible = false;
+            customer_info1.Visible = false;
+            customer_info2.Visible = false;
+            bill1.Visible = false;
+            product1.Visible = false;
+            warehouse1.Visible = false;
+            men1.Visible = false;
+            kids1.Visible = false;
+            warehouse1.Visible = false;
+            women1.Visible = false;
 
-           dashboard1 dashForm= dashbord1 as dashboard1 ;
+
+            dashboard1 dashForm = dashbord1 as dashboard1;
 
             if (dashForm != null)
             {
@@ -87,8 +119,16 @@ namespace Footwear_Manaement_System
             addEmployee1.Visible = false;
             salary1.Visible = false;
             supplier_info1.Visible = false;
-            customer_info1.Visible = true;
-           
+            customer_info1.Visible = false;
+            bill1.Visible = false;
+            product1.Visible = false;
+            warehouse1.Visible = false;
+            men1.Visible = false;
+            kids1.Visible = false;
+            warehouse1.Visible = false;
+            women1.Visible = false;
+            customer_info2.Visible=true;
+
 
             customer_info addcustForm = customer_info1 as customer_info;
             if (addcustForm != null)
@@ -103,6 +143,19 @@ namespace Footwear_Manaement_System
             panel4.Top = warehouse_btn.Top;
             panel4.Left = warehouse_btn.Left;
             warehouse_btn.BackColor = Color.FromArgb(46, 51, 73);
+
+            dashbord1.Visible = false;
+            addEmployee1.Visible = false;
+            salary1.Visible = false;
+            supplier_info1.Visible = false;
+            customer_info1.Visible = false;
+            bill1.Visible = false;
+            product1.Visible = false;
+            warehouse1.Visible = true;
+            men1.Visible = false;
+            kids1.Visible = false;
+            women1.Visible=false;
+            customer_info2.Visible = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -113,11 +166,16 @@ namespace Footwear_Manaement_System
             supplier_info_btn.BackColor = Color.FromArgb(46, 51, 73);
 
             dashbord1.Visible = false;
-            addEmployee1.Visible = true;
+            addEmployee1.Visible = false;
             salary1.Visible = false;
             supplier_info1.Visible = true;
             customer_info1.Visible=false;
-
+            bill1.Visible = false;
+            product1.Visible = false;
+            men1.Visible = false;
+            kids1.Visible = false;
+            warehouse1.Visible = false;
+            customer_info2.Visible = false;
             Supplier_info addsupForm = supplier_info1 as Supplier_info;
             if (addsupForm != null)
             {
@@ -132,6 +190,18 @@ namespace Footwear_Manaement_System
             panel4.Top = biling_btn.Top;
             panel4.Left = biling_btn.Left;
             biling_btn.BackColor = Color.FromArgb(46, 51, 73);
+
+            dashbord1.Visible = false;
+            addEmployee1.Visible = false;
+            salary1.Visible = false;
+            supplier_info1.Visible = false;
+            customer_info1.Visible = false;
+            bill1.Visible = true;
+            product1.Visible = false;
+            men1.Visible = false;
+            kids1.Visible = false;
+            warehouse1.Visible = false;
+            customer_info2.Visible = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -212,6 +282,15 @@ namespace Footwear_Manaement_System
             dashbord1.Visible = false;
             addEmployee1.Visible = false;
             salary1.Visible=true;
+            customer_info1.Visible=false;
+            product1.Visible=false;
+            supplier_info1.Visible =false;  
+            bill1.Visible=false;
+            men1.Visible = false;
+            kids1.Visible = false;
+            warehouse1.Visible = false;
+            customer_info2.Visible = false;
+
 
             Salary salaryForm = salary1 as Salary;
 
@@ -235,6 +314,44 @@ namespace Footwear_Manaement_System
         private void addEmployee1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Product_btn_Click(object sender, EventArgs e)
+        {
+            panel4.Height = Product_btn.Height;
+            panel4.Top = Product_btn.Top;
+            panel4.Left = Product_btn.Left;
+            Product_btn.BackColor = Color.FromArgb(46, 51, 73);
+
+            dashbord1.Visible = false;
+            addEmployee1.Visible = false;
+            salary1.Visible = false;
+            customer_info1.Visible = false;
+            product1.Visible = true;
+            supplier_info1.Visible = false;
+            bill1.Visible = false;
+            men1.Visible = false;
+            kids1.Visible = false;
+            warehouse1.Visible = false;
+             customer_info2.Visible = false;
+
+
+            Product Form = product1 as Product;
+
+            if (Form != null)
+            {
+                Form.RefreshData();
+            }
+        }
+
+        private void Product_btn_Leave(object sender, EventArgs e)
+        {
+            Product_btn.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

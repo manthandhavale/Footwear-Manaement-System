@@ -46,6 +46,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.addSupplier_Order = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,6 +57,8 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.addSupplier_Order);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.addSupplier_Address);
             this.panel2.Controls.Add(this.addSupplier_Email);
             this.panel2.Controls.Add(this.label7);
@@ -131,6 +135,7 @@
             this.addSupplier_clearBtn.TabIndex = 13;
             this.addSupplier_clearBtn.Text = "Clear";
             this.addSupplier_clearBtn.UseVisualStyleBackColor = false;
+            this.addSupplier_clearBtn.Click += new System.EventHandler(this.addSupplier_clearBtn_Click);
             // 
             // addSupplier_deleteBtn
             // 
@@ -148,6 +153,7 @@
             this.addSupplier_deleteBtn.TabIndex = 12;
             this.addSupplier_deleteBtn.Text = "Delete";
             this.addSupplier_deleteBtn.UseVisualStyleBackColor = false;
+            this.addSupplier_deleteBtn.Click += new System.EventHandler(this.addSupplier_deleteBtn_Click);
             // 
             // addSupplier_updateBtn
             // 
@@ -165,6 +171,7 @@
             this.addSupplier_updateBtn.TabIndex = 11;
             this.addSupplier_updateBtn.Text = "Update";
             this.addSupplier_updateBtn.UseVisualStyleBackColor = false;
+            this.addSupplier_updateBtn.Click += new System.EventHandler(this.addSupplier_updateBtn_Click);
             // 
             // addSupplier_addBtn
             // 
@@ -182,6 +189,7 @@
             this.addSupplier_addBtn.TabIndex = 10;
             this.addSupplier_addBtn.Text = "Add";
             this.addSupplier_addBtn.UseVisualStyleBackColor = false;
+            this.addSupplier_addBtn.Click += new System.EventHandler(this.addSupplier_addBtn_Click);
             // 
             // addSupplier_phoneNum
             // 
@@ -247,6 +255,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1084, 288);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -257,6 +266,23 @@
             this.label1.Size = new System.Drawing.Size(197, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier\'s Data :-";
+            // 
+            // addSupplier_Order
+            // 
+            this.addSupplier_Order.Location = new System.Drawing.Point(665, 164);
+            this.addSupplier_Order.Name = "addSupplier_Order";
+            this.addSupplier_Order.Size = new System.Drawing.Size(222, 22);
+            this.addSupplier_Order.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(565, 165);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 21);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Order :-";
             // 
             // Supplier_info
             // 
@@ -296,5 +322,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox addSupplier_Order;
+        private System.Windows.Forms.Label label4;
     }
 }

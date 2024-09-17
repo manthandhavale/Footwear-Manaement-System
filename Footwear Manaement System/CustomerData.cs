@@ -10,13 +10,12 @@ namespace Footwear_Manaement_System
 {
     internal class CustomerData
     {
-        public int ID { set; get; }
+      
         public string CustomerID { set; get; }
         public string Name { set; get; }
         public string Address { set; get; }
         public string Contact { set; get; }
         public string Email { set; get; }
-        public int Order { set; get; }
  
 
 
@@ -42,13 +41,12 @@ namespace Footwear_Manaement_System
                         while (reader.Read())
                         {
                             CustomerData cd = new CustomerData();
-                            cd.ID = (int)reader["id"];
-                            cd.CustomerID = reader["employee_id"].ToString();
+                            
+                            cd.CustomerID = reader["customer_id"].ToString();
                             cd.Name = reader["full_name"].ToString();
-                            cd.Address = reader["gender"].ToString();
+                            cd.Address = reader["address"].ToString();
                             cd.Contact = reader["contact_number"].ToString();
-                            cd.Email = reader["position"].ToString();
-                            cd.Order = (int)reader["salary"];
+                            cd.Email = reader["email"].ToString();
                            
                             listdata.Add(cd);
                         }
@@ -57,7 +55,7 @@ namespace Footwear_Manaement_System
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex);
+                    Console.WriteLine("Error: " + ex.Message);
                 }
                 finally
                 {
@@ -67,7 +65,7 @@ namespace Footwear_Manaement_System
             return listdata;
         }
 
-        public List<CustomerData> orderCustomerListData()
+        public List<CustomerData> billCustomerListData()
         {
             List<CustomerData> listdata = new List<CustomerData>();
 
@@ -89,7 +87,6 @@ namespace Footwear_Manaement_System
                             cd.CustomerID = reader["customer_id"].ToString();
                             cd.Name = reader["full_name"].ToString();
                             cd.Address = reader["address"].ToString();
-                            cd.Order = (int)reader["order"];
 
                             listdata.Add(cd);
                         }

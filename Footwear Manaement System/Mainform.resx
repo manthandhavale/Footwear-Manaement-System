@@ -120,11 +120,11 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Product_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAACqSURBVEhL7ZNRCoMwEET3OrY3KPbfXrvFezTxILrClARm
-        pHbjV/HBICSzLwrRTnbTWR4vlucj4q4XtAVVbAm0BVVqCbSF9bNUMZgntP/GETdJ3qAPaiAS6BhVjgQ6
-        RpUjgY5R5UigY1Q5EugYVY4EOkaVt3K19w1jPpf6eg/LTF36ntRjzP+fdK/3sMzUpZZAx/ibTGrgl7gj
-        Q8d0Nj1aDlnl/hygO9mD2QIbTE5ImY7juAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAKpJREFUSEvtk1EKgzAQRPc6tjco9t9eu8V7NPEgusKUBGakduNX8cEgJLMvCtFO
+        dtNZHi+W5yPirhe0BVVsCbQFVWoJtIX1s1QxmCe0/8YRN0neoA9qIBLoGFWOBDpGlSOBjlHlSKBjVDkS
+        6BhVjgQ6RpW3crX3DWM+l/p6D8tMXfqe1GPM/590r/ewzNSllkDH+JtMauCXuCNDx3Q2PVoOWeX+HKA7
+        2YPZAhtMTkiZjuO4AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="Salary_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
