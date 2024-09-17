@@ -57,8 +57,8 @@
             this.dashbord1 = new Footwear_Manaement_System.dashboard1();
             this.addEmployee1 = new Footwear_Manaement_System.AddEmployee();
             this.salary1 = new Footwear_Manaement_System.Salary();
-            this.product1= new Product(men1,women1,kids1);
             this.customer_info1 = new Footwear_Manaement_System.customer_info();
+            this.product1 = new Product(men1, women1, kids1);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,6 +86,16 @@
             this.panel1.Size = new System.Drawing.Size(183, 852);
             this.panel1.TabIndex = 0;
             // 
+
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.panel4.Location = new System.Drawing.Point(3, 150);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(7, 51);
+            this.panel4.TabIndex = 2;
+
             // Product_btn
             // 
             this.Product_btn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -121,14 +131,6 @@
             this.Salary_btn.UseVisualStyleBackColor = true;
             this.Salary_btn.Click += new System.EventHandler(this.button1_Click_1);
             this.Salary_btn.Leave += new System.EventHandler(this.Salary_btn_Leave);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.panel4.Location = new System.Drawing.Point(3, 150);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(7, 51);
-            this.panel4.TabIndex = 2;
             // 
             // supplier_info_btn
             // 

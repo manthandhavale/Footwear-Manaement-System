@@ -118,7 +118,7 @@ namespace Footwear_Manaement_System
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex
+                        MessageBox.Show("Error: " + ex.Message
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
@@ -144,7 +144,7 @@ namespace Footwear_Manaement_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex, "Error Message"
+                MessageBox.Show("Error: " + ex.Message, "Error Message"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -214,9 +214,10 @@ namespace Footwear_Manaement_System
                         DateTime today = DateTime.Today;
 
                         string updateData = "UPDATE product SET model_no = @model_no" +
-                            ", category = @category, price = @price,quantity = @qunt" +
-                            ", brand = @brand, update_date = @updateDate, " +
-                            "WHERE product_id = @productID";
+                                            ", category = @category, price = @price, size = @size, quantity = @qunt" +
+                                            ", brand = @brand, update_date = @updateDate " + 
+                                             "WHERE product_id = @productID";
+
 
                         using (SqlCommand cmd = new SqlCommand(updateData, connect))
                         {
@@ -241,7 +242,7 @@ namespace Footwear_Manaement_System
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex
+                        MessageBox.Show("Error: " + ex.Message
                         , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
@@ -309,7 +310,7 @@ namespace Footwear_Manaement_System
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex
+                        MessageBox.Show("Error: " + ex.Message
                         , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally

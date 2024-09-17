@@ -15,6 +15,12 @@ namespace Footwear_Manaement_System
         private Men _men;
         private Women _women;
         private Kids _kids;
+
+        public Product()
+        {
+            InitializeComponent();
+        }
+
         public Product(Men men, Women women, Kids kids)
         {
             InitializeComponent();

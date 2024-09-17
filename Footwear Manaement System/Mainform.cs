@@ -68,6 +68,7 @@ namespace Footwear_Manaement_System
             kids1.Visible = false;
             warehouse1.Visible = false;
             customer_info2.Visible = false;
+            women1.Visible = false;
 
             AddEmployee addEmForm = addEmployee1 as AddEmployee;
             if (addEmForm != null)
@@ -176,6 +177,7 @@ namespace Footwear_Manaement_System
             kids1.Visible = false;
             warehouse1.Visible = false;
             customer_info2.Visible = false;
+            women1.Visible = false;
             Supplier_info addsupForm = supplier_info1 as Supplier_info;
             if (addsupForm != null)
             {
@@ -202,6 +204,7 @@ namespace Footwear_Manaement_System
             kids1.Visible = false;
             warehouse1.Visible = false;
             customer_info2.Visible = false;
+            women1.Visible = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -274,6 +277,7 @@ namespace Footwear_Manaement_System
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            panel4.Visible = true;
             panel4.Height = Salary_btn.Height;
             panel4.Top = Salary_btn.Top;
             panel4.Left = Salary_btn.Left;
@@ -290,6 +294,7 @@ namespace Footwear_Manaement_System
             kids1.Visible = false;
             warehouse1.Visible = false;
             customer_info2.Visible = false;
+            women1.Visible = false;
 
 
             Salary salaryForm = salary1 as Salary;
@@ -332,6 +337,7 @@ namespace Footwear_Manaement_System
             bill1.Visible = false;
             men1.Visible = false;
             kids1.Visible = false;
+            women1.Visible = false;
             warehouse1.Visible = false;
              customer_info2.Visible = false;
 
