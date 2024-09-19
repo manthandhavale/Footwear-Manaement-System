@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Men));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.Add_To_Cart = new System.Windows.Forms.Button();
             this.addMen_Quantity = new System.Windows.Forms.TextBox();
             this.addMen_CustomerID = new System.Windows.Forms.TextBox();
             this.addMen_ModelNo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Add_To_Cart = new System.Windows.Forms.Button();
-            this.clearBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1114, 647);
             this.panel1.TabIndex = 2;
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.clearBtn.FlatAppearance.BorderSize = 0;
+            this.clearBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn.ForeColor = System.Drawing.Color.White;
+            this.clearBtn.Location = new System.Drawing.Point(612, 575);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(101, 36);
+            this.clearBtn.TabIndex = 21;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // button2
             // 
@@ -93,6 +111,16 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(37, 63);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1033, 303);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -102,6 +130,26 @@
             this.label5.Size = new System.Drawing.Size(211, 38);
             this.label5.TabIndex = 15;
             this.label5.Text = "Product View:-";
+            // 
+            // Add_To_Cart
+            // 
+            this.Add_To_Cart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.Add_To_Cart.FlatAppearance.BorderSize = 0;
+            this.Add_To_Cart.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Add_To_Cart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Add_To_Cart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Add_To_Cart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add_To_Cart.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add_To_Cart.ForeColor = System.Drawing.Color.White;
+            this.Add_To_Cart.Image = ((System.Drawing.Image)(resources.GetObject("Add_To_Cart.Image")));
+            this.Add_To_Cart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Add_To_Cart.Location = new System.Drawing.Point(350, 575);
+            this.Add_To_Cart.Name = "Add_To_Cart";
+            this.Add_To_Cart.Size = new System.Drawing.Size(148, 36);
+            this.Add_To_Cart.TabIndex = 14;
+            this.Add_To_Cart.Text = "Add to Cart   ";
+            this.Add_To_Cart.UseVisualStyleBackColor = false;
+            this.Add_To_Cart.Click += new System.EventHandler(this.Add_To_Cart_Click);
             // 
             // addMen_Quantity
             // 
@@ -150,57 +198,10 @@
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(134, 450);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 25);
+            this.label1.Size = new System.Drawing.Size(153, 25);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Model Numer:-";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(37, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1033, 303);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Add_To_Cart
-            // 
-            this.Add_To_Cart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.Add_To_Cart.FlatAppearance.BorderSize = 0;
-            this.Add_To_Cart.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.Add_To_Cart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.Add_To_Cart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.Add_To_Cart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Add_To_Cart.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add_To_Cart.ForeColor = System.Drawing.Color.White;
-            this.Add_To_Cart.Image = ((System.Drawing.Image)(resources.GetObject("Add_To_Cart.Image")));
-            this.Add_To_Cart.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Add_To_Cart.Location = new System.Drawing.Point(350, 575);
-            this.Add_To_Cart.Name = "Add_To_Cart";
-            this.Add_To_Cart.Size = new System.Drawing.Size(148, 36);
-            this.Add_To_Cart.TabIndex = 14;
-            this.Add_To_Cart.Text = "Add to Cart   ";
-            this.Add_To_Cart.UseVisualStyleBackColor = false;
-            this.Add_To_Cart.Click += new System.EventHandler(this.Add_To_Cart_Click);
-            // 
-            // clearBtn
-            // 
-            this.clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.clearBtn.FlatAppearance.BorderSize = 0;
-            this.clearBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearBtn.ForeColor = System.Drawing.Color.White;
-            this.clearBtn.Location = new System.Drawing.Point(612, 575);
-            this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(101, 36);
-            this.clearBtn.TabIndex = 21;
-            this.clearBtn.Text = "Clear";
-            this.clearBtn.UseVisualStyleBackColor = false;
-            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            this.label1.Text = "Model Number:-";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Men
             // 

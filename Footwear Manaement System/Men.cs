@@ -252,5 +252,10 @@ namespace Footwear_Manaement_System
             addMen_Quantity.Text = "";
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
