@@ -54,6 +54,14 @@ namespace Footwear_Manaement_System
                 MessageBox.Show("Please fill all blank fields"
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(addEmployee_phoneNum.Text.Trim(), @"^\d{10}$"))
+            {
+                MessageBox.Show("Phone number must be exactly 10 digits.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(addEmployee_fullName.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                MessageBox.Show("Full name should not contain special characters or numbers.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 if (connect.State == ConnectionState.Closed)
@@ -200,6 +208,14 @@ namespace Footwear_Manaement_System
             {
                 MessageBox.Show("Please fill all blank fields"
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(addEmployee_phoneNum.Text.Trim(), @"^\d{10}$"))
+            {
+                MessageBox.Show("Phone number must be exactly 10 digits.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!System.Text.RegularExpressions.Regex.IsMatch(addEmployee_fullName.Text.Trim(), @"^[a-zA-Z\s]+$"))
+            {
+                MessageBox.Show("Full name should not contain special characters or numbers.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             { 

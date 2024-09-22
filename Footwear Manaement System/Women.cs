@@ -127,9 +127,9 @@ namespace Footwear_Manaement_System
 
                                 cmd.Parameters.AddWithValue("@model_no", addWomen_ModelNo.Text.Trim());
 
-                                price = (int)cmd.ExecuteScalar();
+                                price = Convert.ToInt32(cmd.ExecuteScalar());
 
-                            }
+                        }
                             decimal quantity, totalAmount;
                             if (decimal.TryParse(addWomen_Quantity.Text.Trim(), out quantity))
                             {
@@ -140,10 +140,25 @@ namespace Footwear_Manaement_System
                                 MessageBox.Show("Invalid input for quantity or price.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
-                            if (count > 0)
+                        int currentQuantity = 0;
+                        string getQuantityQuery = "SELECT quantity FROM product WHERE model_no = @model_no";
+                        using (SqlCommand cmd = new SqlCommand(getQuantityQuery, connect))
+                        {
+                            cmd.Parameters.AddWithValue("@model_no", addWomen_ModelNo.Text.Trim());
+                            currentQuantity = Convert.ToInt32(cmd.ExecuteScalar());
+                        }
+
+                        // Check if the requested quantity is available
+                        if (currentQuantity < quantity)
+                        {
+                            MessageBox.Show($"Insufficient quantity in stock. Available quantity: {currentQuantity}",
+                                "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        if (count > 0)
                             {
                                 DateTime today = DateTime.Today;
-                                string insertData = "update bill set ttotal_amount=total_amount + @total_amt where customer_id=@customerID";
+                                string insertData = "update bill set total_amount=total_amount + @total_amt where customer_id=@customerID";
 
 
 
@@ -191,7 +206,7 @@ namespace Footwear_Manaement_System
 
                                 productno = (int)cmd.ExecuteScalar();
 
-                            }
+                        }
                             string AddOrder = "INSERT INTO orders " +
                                  "(customer_id,product_id,Quantity)" +
                              "values(@customerID,@product_id,@Quantity)";

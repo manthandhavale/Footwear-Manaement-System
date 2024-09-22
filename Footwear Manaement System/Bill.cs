@@ -241,7 +241,7 @@ namespace Footwear_Manaement_System
             }
            
         }
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             Font printFont = new Font("Arial", 12);
