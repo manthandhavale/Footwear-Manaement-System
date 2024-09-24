@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.addQuantity = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.addBrand = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.addSize = new System.Windows.Forms.ComboBox();
@@ -50,8 +52,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.addQuantity = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addProduct_picture)).BeginInit();
             this.panel1.SuspendLayout();
@@ -86,6 +86,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1129, 279);
             this.panel2.TabIndex = 3;
+            // 
+            // addQuantity
+            // 
+            this.addQuantity.Location = new System.Drawing.Point(665, 164);
+            this.addQuantity.Name = "addQuantity";
+            this.addQuantity.Size = new System.Drawing.Size(222, 22);
+            this.addQuantity.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(526, 165);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 21);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Quanttity :-";
             // 
             // addBrand
             // 
@@ -348,23 +365,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Stock Data :-";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(526, 165);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 21);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Quanttity :-";
-            // 
-            // addQuantity
-            // 
-            this.addQuantity.Location = new System.Drawing.Point(665, 164);
-            this.addQuantity.Name = "addQuantity";
-            this.addQuantity.Size = new System.Drawing.Size(222, 22);
-            this.addQuantity.TabIndex = 20;
-            // 
             // warehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -374,6 +374,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "warehouse";
             this.Size = new System.Drawing.Size(1180, 708);
+            this.Load += new System.EventHandler(this.warehouse_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addProduct_picture)).EndInit();

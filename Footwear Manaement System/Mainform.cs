@@ -29,6 +29,7 @@ namespace Footwear_Manaement_System
             int nHeightEllipse
 
               );
+       
         public Mainform()
         {
             InitializeComponent();
@@ -45,7 +46,8 @@ namespace Footwear_Manaement_System
             kids1.Visible = false;
             women1.Visible = false;
             warehouse1.Visible = false;
-            customer_info2.Visible = false; 
+            customer_info2.Visible = false;
+            billSearch1.Visible = false;
 
         }
 
@@ -69,6 +71,7 @@ namespace Footwear_Manaement_System
             warehouse1.Visible = false;
             customer_info2.Visible = false;
             women1.Visible = false;
+            billSearch1.Visible = false;
 
             AddEmployee addEmForm = addEmployee1 as AddEmployee;
             if (addEmForm != null)
@@ -97,7 +100,7 @@ namespace Footwear_Manaement_System
             kids1.Visible = false;
             warehouse1.Visible = false;
             women1.Visible = false;
-
+            billSearch1.Visible = false;
 
             dashboard1 dashForm = dashbord1 as dashboard1;
 
@@ -129,6 +132,7 @@ namespace Footwear_Manaement_System
             warehouse1.Visible = false;
             women1.Visible = false;
             customer_info2.Visible=true;
+            billSearch1.Visible = false;
 
 
             customer_info addcustForm = customer_info1 as customer_info;
@@ -157,7 +161,17 @@ namespace Footwear_Manaement_System
             kids1.Visible = false;
             women1.Visible=false;
             customer_info2.Visible = false;
+            billSearch1.Visible = false;
+
+            warehouse addcustForm = warehouse1 as warehouse;
+            if (addcustForm != null)
+            {
+                addcustForm.RefreshData();
+            }
+
+
         }
+       
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -178,6 +192,9 @@ namespace Footwear_Manaement_System
             warehouse1.Visible = false;
             customer_info2.Visible = false;
             women1.Visible = false;
+            billSearch1.Visible = false;
+
+
             Supplier_info addsupForm = supplier_info1 as Supplier_info;
             if (addsupForm != null)
             {
@@ -205,6 +222,7 @@ namespace Footwear_Manaement_System
             warehouse1.Visible = false;
             customer_info2.Visible = false;
             women1.Visible = false;
+            billSearch1.Visible = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -295,6 +313,7 @@ namespace Footwear_Manaement_System
             warehouse1.Visible = false;
             customer_info2.Visible = false;
             women1.Visible = false;
+            billSearch1.Visible = false;
 
 
             Salary salaryForm = salary1 as Salary;
@@ -340,6 +359,7 @@ namespace Footwear_Manaement_System
             women1.Visible = false;
             warehouse1.Visible = false;
              customer_info2.Visible = false;
+            billSearch1.Visible = false;
 
 
             Product Form = product1 as Product;
@@ -358,6 +378,39 @@ namespace Footwear_Manaement_System
         private void label2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            panel4.Height = button1.Height;
+            panel4.Top = button1.Top;
+            panel4.Left = button1.Left;
+            button1.BackColor = Color.FromArgb(46, 51, 73);
+
+
+            dashbord1.Visible = false;
+            addEmployee1.Visible = false;
+            salary1.Visible = false;
+            customer_info1.Visible = false;
+            product1.Visible = false;
+            supplier_info1.Visible = false;
+            bill1.Visible = false;
+            men1.Visible = false;
+            kids1.Visible = false;
+            women1.Visible = false;
+            warehouse1.Visible = false;
+            customer_info2.Visible = false;
+            billSearch1.Visible = true;
+
+
+           
+
+
+        }
+
+        private void button1_Leave_1(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.FromArgb(24, 30, 54);
         }
     }
 }

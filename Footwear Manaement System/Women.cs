@@ -164,7 +164,7 @@ namespace Footwear_Manaement_System
 
                                 using (SqlCommand cmd = new SqlCommand(insertData, connect))
                                 {
-                                    cmd.Parameters.AddWithValue("@customerID", addWomen_CustomerID.Text.Trim());
+                                cmd.Parameters.AddWithValue("@customerID", addWomen_CustomerID.Text.Trim());
                                     cmd.Parameters.AddWithValue("@total_amt", totalAmount);
 
                                     cmd.ExecuteNonQuery();
@@ -172,7 +172,7 @@ namespace Footwear_Manaement_System
                                     MessageBox.Show("Added successfully!"
                                         , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                    clearFields();
+                                    
                                 }
                             }
                             else
@@ -192,7 +192,7 @@ namespace Footwear_Manaement_System
                                     MessageBox.Show("Added successfully!"
                                         , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                    clearFields();
+                                   
                                 }
 
 

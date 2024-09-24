@@ -81,6 +81,12 @@
       <DependentUpon>Bill.cs</DependentUpon>
     </Compile>
     <Compile Include="BillData.cs" />
+    <Compile Include="BillSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BillSearch.Designer.cs">
+      <DependentUpon>BillSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerData.cs" />
     <Compile Include="customer_info.cs">
       <SubType>UserControl</SubType>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bill.resx">
       <DependentUpon>Bill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillSearch.resx">
+      <DependentUpon>BillSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="customer_info.resx">
       <DependentUpon>customer_info.cs</DependentUpon>
@@ -290,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-search-48.png" />
+    <None Include="Resources\icons8-search-24.png" />
     <Content Include="Resources\kids\1.jpg" />
     <Content Include="Resources\kids\10.jpg" />
     <Content Include="Resources\kids\11.jpg" />

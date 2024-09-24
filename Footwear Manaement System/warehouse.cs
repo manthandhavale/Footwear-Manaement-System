@@ -327,5 +327,10 @@ namespace Footwear_Manaement_System
 
             }
         }
+
+        private void warehouse_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
