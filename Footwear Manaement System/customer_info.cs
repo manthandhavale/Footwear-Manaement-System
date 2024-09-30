@@ -22,6 +22,7 @@ namespace Footwear_Manaement_System
             InitializeComponent();
 
             displayCustomerData();
+            disableFields();
         }
         public void RefreshData()
         {
@@ -31,6 +32,7 @@ namespace Footwear_Manaement_System
                 return;
             }
             displayCustomerData();
+            disableFields();
         }
         public void displayCustomerData()
         {
@@ -39,7 +41,10 @@ namespace Footwear_Manaement_System
 
             dataGridView1.DataSource = listData;
         }
-
+        public void disableFields()
+        {
+            addCustomer_id.Enabled = false;
+        }
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -47,11 +52,11 @@ namespace Footwear_Manaement_System
 
         private void addCustomer_addBtn_Click(object sender, EventArgs e)
         {
-            if (addCustomer_id.Text == ""
-              || addCustomer_fullName.Text == ""
-              || addCustomer_Address.Text == ""
-              || addCustomer_phoneNum.Text == ""
-              || addCustomer_Email.Text == "")
+            if (
+                   addCustomer_fullName.Text == ""
+                  || addCustomer_Address.Text == ""
+                  || addCustomer_phoneNum.Text == ""
+                  || addCustomer_Email.Text == "")
             {
                 MessageBox.Show("Please fill all blank fields"
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,56 +76,33 @@ namespace Footwear_Manaement_System
                     try
                     {
                         connect.Open();
-                        string checkCustID = "SELECT COUNT(*) FROM customer WHERE customer_id = @custID AND delete_date IS NULL";
 
-                        using (SqlCommand checkCust = new SqlCommand(checkCustID, connect))
+                        DateTime today = DateTime.Today;
+                        string insertData = "INSERT INTO customer " +
+                                            "(full_name, address, contact_number, email, bill, insert_date) " +
+                                            "VALUES(@fullName, @address, @contactNum, @email, @bill, @insertDate)";
+
+                        using (SqlCommand cmd = new SqlCommand(insertData, connect))
                         {
-                           checkCust.Parameters.AddWithValue("@custID",addCustomer_id.Text.Trim());
-                            int count = (int)checkCust.ExecuteScalar();
+                            cmd.Parameters.AddWithValue("@fullName", addCustomer_fullName.Text.Trim());
+                            cmd.Parameters.AddWithValue("@address", addCustomer_Address.Text.Trim());
+                            cmd.Parameters.AddWithValue("@contactNum", addCustomer_phoneNum.Text.Trim());
+                            cmd.Parameters.AddWithValue("@email", addCustomer_Email.Text.Trim());
+                            cmd.Parameters.AddWithValue("@bill", 0);
+                            cmd.Parameters.AddWithValue("@insertDate", today);
 
-                            if (count >= 1)
-                            {
-                                MessageBox.Show(addCustomer_id.Text.Trim() + " is already taken"
-                                    , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
-                                DateTime today = DateTime.Today;
-                                string insertData = "INSERT INTO customer " +
-                                    "(customer_id, full_name, address, contact_number" +
-                                    ", email, bill) " +
-                                    "VALUES(@customerID, @fullName, @address, @contactNum" +
-                                    ", @email, @bill)";
+                            cmd.ExecuteNonQuery();
 
+                            displayCustomerData();
 
+                            MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                using (SqlCommand cmd = new SqlCommand(insertData, connect))
-                                {
-                                    cmd.Parameters.AddWithValue("@customerID", addCustomer_id.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@fullName", addCustomer_fullName.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@address", addCustomer_Address.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@contactNum", addCustomer_phoneNum.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@email", addCustomer_Email.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@bill", 0);
-                                    cmd.Parameters.AddWithValue("@insertDate", today);
-
-
-                                    cmd.ExecuteNonQuery();
-
-                                    displayCustomerData();
-
-                                    MessageBox.Show("Added successfully!"
-                                        , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                    clearFields();
-                                }
-                            }
+                            clearFields();
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex
-                    , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -236,68 +218,7 @@ namespace Footwear_Manaement_System
             }
         }
 
-        private void addCustomer_deleteBtn_Click(object sender, EventArgs e)
-        {
-            if (addCustomer_id.Text == ""
-                 || addCustomer_fullName.Text == ""
-                 || addCustomer_Address.Text == ""
-                 || addCustomer_phoneNum.Text == ""
-                 || addCustomer_Email.Text == ""
-                 )
-            {
-                MessageBox.Show("Please fill all blank fields"
-                    , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-           
-            else
-            {
-                DialogResult check = MessageBox.Show("Are you sure you want to DELETE " +
-                    "Customer ID: " + addCustomer_id.Text.Trim() + "?", "Confirmation Message"
-                    , MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                if (check == DialogResult.Yes)
-                {
-                    try
-                    {
-                        connect.Open();
-                        DateTime today = DateTime.Today;
-
-                        string updateData = "UPDATE customer SET delete_date = @deleteDate " +
-                          "WHERE customer_id = @customerID";
-
-                        using (SqlCommand cmd = new SqlCommand(updateData, connect))
-                        {
-                            cmd.Parameters.AddWithValue("@deleteDate", today);
-                            cmd.Parameters.AddWithValue("@customerID", addCustomer_id.Text.Trim());
-
-                            cmd.ExecuteNonQuery();
-
-                            displayCustomerData();
-
-                            MessageBox.Show("Update successfully!"
-                                , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            clearFields();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex
-                        , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        connect.Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Cancelled."
-                        , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-            }
-        }
+      
     }
 
 }

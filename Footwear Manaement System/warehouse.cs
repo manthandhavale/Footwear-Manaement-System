@@ -20,6 +20,7 @@ namespace Footwear_Manaement_System
             InitializeComponent();
 
             displayWarehouseData();
+            disableFields();
         }
         public void RefreshData()
         {
@@ -29,6 +30,11 @@ namespace Footwear_Manaement_System
                 return;
             }
             displayWarehouseData();
+            disableFields();
+        }
+        public void disableFields()
+        {
+            addProduct_id.Enabled = false;
         }
         public void displayWarehouseData()
         {
@@ -40,13 +46,14 @@ namespace Footwear_Manaement_System
 
         private void addStock_addBtn_Click(object sender, EventArgs e)
         {
-            if (addProduct_id.Text == ""
-             || addModel_No.Text == ""
-             || addCategory.Text == ""
-             || addPrice.Text == ""
-             || addSize.Text == ""
-             || addBrand.Text == ""
-             || addProduct_picture.Image == null)
+            if (addModel_No.Text == ""
+                   || addCategory.Text == ""
+                   || addPrice.Text == ""
+                   || addSize.Text == ""
+                   || addBrand.Text == ""
+                   || addProduct_picture.Image == null
+                   || addQuantity.Text == ""
+                   )
             {
                 MessageBox.Show("Please fill all blank fields"
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -58,62 +65,43 @@ namespace Footwear_Manaement_System
                     try
                     {
                         connect.Open();
-                        string checkProID = "SELECT COUNT(*) FROM product WHERE product_id = @proID AND delete_date IS NULL";
 
-                        using (SqlCommand checkPro = new SqlCommand(checkProID, connect))
+                        DateTime today = DateTime.Today;
+                        string insertData = "INSERT INTO product " +
+                            "(model_no, category, price, size, image, brand, insert_date, quantity) " +
+                            "VALUES(@model_no, @category, @price, @size, @image, @brand, @insertDate, @quantity)";
+
+                        string path = Path.Combine(@"C:\Users\lenovo\source\repos\Footwear Manaement System\Footwear Manaement System\Product",
+                            addModel_No.Text.Trim() + ".jpg"); // Use model_no instead of product_id
+
+                        string directoryPath = Path.GetDirectoryName(path);
+
+                        if (!Directory.Exists(directoryPath))
                         {
-                            checkPro.Parameters.AddWithValue("@proID", addProduct_id.Text.Trim());
-                            int count = (int)checkPro.ExecuteScalar();
+                            Directory.CreateDirectory(directoryPath);
+                        }
 
-                            if (count >= 1)
-                            {
-                                MessageBox.Show(addProduct_id.Text.Trim() + " is already taken"
-                                    , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
-                                DateTime today = DateTime.Today;
-                                string insertData = "INSERT INTO product " +
-                                    "(  product_id, model_no,category, price" +
-                                    ",size, image, brand, insert_date,quantity) " +
-                                    "VALUES(@productID, @model_no, @category, @price" +
-                                    ", @size, @image, @brand, @insertDate,@qunt)";
+                        File.Copy(addProduct_picture.ImageLocation, path, true);
 
-                                string path = Path.Combine(@"C:\Users\lenovo\source\repos\Footwear Manaement System\Footwear Manaement System\Product"
-                                    + addProduct_id.Text.Trim() + ".jpg");
+                        using (SqlCommand cmd = new SqlCommand(insertData, connect))
+                        {
+                            cmd.Parameters.AddWithValue("@model_no", addModel_No.Text.Trim());
+                            cmd.Parameters.AddWithValue("@category", addCategory.Text.Trim());
+                            cmd.Parameters.AddWithValue("@brand", addBrand.Text.Trim());
+                            cmd.Parameters.AddWithValue("@price", addPrice.Text.Trim());
+                            cmd.Parameters.AddWithValue("@image", path);
+                            cmd.Parameters.AddWithValue("@size", addSize.Text.Trim());
+                            cmd.Parameters.AddWithValue("@insertDate", today);
+                            cmd.Parameters.AddWithValue("@quantity", addQuantity.Text.Trim());
 
-                                string directoryPath = Path.GetDirectoryName(path);
+                            cmd.ExecuteNonQuery();
 
-                                if (!Directory.Exists(directoryPath))
-                                {
-                                    Directory.CreateDirectory(directoryPath);
-                                }
+                            displayWarehouseData();
 
-                                File.Copy(addProduct_picture.ImageLocation, path, true);
+                            MessageBox.Show("Added successfully!"
+                                , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                using (SqlCommand cmd = new SqlCommand(insertData, connect))
-                                {
-                                    cmd.Parameters.AddWithValue("@productID", addProduct_id.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@model_no", addModel_No.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@category", addCategory.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@brand", addBrand.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@price", addPrice.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@image", path);
-                                    cmd.Parameters.AddWithValue("@size", addSize.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@insertDate", today);
-                                    cmd.Parameters.AddWithValue("@qunt", addQuantity.Text.Trim());
-
-
-                                    cmd.ExecuteNonQuery();
-
-                                    displayWarehouseData();
-
-                                    MessageBox.Show("Added successfully!"
-                                        , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                    clearFields();
-                                }
-                            }
+                            clearFields();
                         }
                     }
                     catch (Exception ex)
@@ -127,6 +115,7 @@ namespace Footwear_Manaement_System
                     }
                 }
             }
+
         }
 
         private void addStock_importBtn_Click(object sender, EventArgs e)
@@ -264,69 +253,7 @@ namespace Footwear_Manaement_System
             clearFields();
         }
 
-        private void addStock_deleteBtn_Click(object sender, EventArgs e)
-        {
-            if (addProduct_id.Text == ""
-           || addModel_No.Text == ""
-           || addCategory.Text == ""
-           || addPrice.Text == ""
-           || addSize.Text == ""
-           || addBrand.Text == ""
-           || addProduct_picture.Image == null)
-            {
-                MessageBox.Show("Please fill all blank fields"
-                    , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                DialogResult check = MessageBox.Show("Are you sure you want to DELETE " +
-                    "Product ID: " + addProduct_id.Text.Trim() + "?", "Confirmation Message"
-                    , MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                if (check == DialogResult.Yes)
-                {
-                    try
-                    {
-                        connect.Open();
-                        DateTime today = DateTime.Today;
-
-                        string updateData = "UPDATE product SET delete_date = @deleteDate " +
-                            "WHERE product_id = @productID";
-
-                        using (SqlCommand cmd = new SqlCommand(updateData, connect))
-                        {
-                            cmd.Parameters.AddWithValue("@deleteDate", today);
-                            cmd.Parameters.AddWithValue("@productID", addProduct_id.Text.Trim());
-
-                            cmd.ExecuteNonQuery();
-
-                            displayWarehouseData();
-
-                            MessageBox.Show("Update successfully!"
-                                , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            clearFields();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message
-                        , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        connect.Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Cancelled."
-                        , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-
-            }
-        }
+       
 
         private void warehouse_Load(object sender, EventArgs e)
         {

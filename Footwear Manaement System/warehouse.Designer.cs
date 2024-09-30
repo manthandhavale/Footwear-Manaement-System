@@ -37,7 +37,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.addModel_No = new System.Windows.Forms.TextBox();
             this.addStock_clearBtn = new System.Windows.Forms.Button();
-            this.addStock_deleteBtn = new System.Windows.Forms.Button();
             this.addStock_updateBtn = new System.Windows.Forms.Button();
             this.addStock_addBtn = new System.Windows.Forms.Button();
             this.addStock_importBtn = new System.Windows.Forms.Button();
@@ -70,7 +69,6 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.addModel_No);
             this.panel2.Controls.Add(this.addStock_clearBtn);
-            this.panel2.Controls.Add(this.addStock_deleteBtn);
             this.panel2.Controls.Add(this.addStock_updateBtn);
             this.panel2.Controls.Add(this.addStock_addBtn);
             this.panel2.Controls.Add(this.addStock_importBtn);
@@ -178,31 +176,13 @@
             this.addStock_clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addStock_clearBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addStock_clearBtn.ForeColor = System.Drawing.Color.White;
-            this.addStock_clearBtn.Location = new System.Drawing.Point(730, 218);
+            this.addStock_clearBtn.Location = new System.Drawing.Point(665, 218);
             this.addStock_clearBtn.Name = "addStock_clearBtn";
             this.addStock_clearBtn.Size = new System.Drawing.Size(101, 36);
             this.addStock_clearBtn.TabIndex = 13;
             this.addStock_clearBtn.Text = "Clear";
             this.addStock_clearBtn.UseVisualStyleBackColor = false;
             this.addStock_clearBtn.Click += new System.EventHandler(this.addStock_clearBtn_Click);
-            // 
-            // addStock_deleteBtn
-            // 
-            this.addStock_deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.addStock_deleteBtn.FlatAppearance.BorderSize = 0;
-            this.addStock_deleteBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.addStock_deleteBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.addStock_deleteBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.addStock_deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addStock_deleteBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addStock_deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.addStock_deleteBtn.Location = new System.Drawing.Point(587, 218);
-            this.addStock_deleteBtn.Name = "addStock_deleteBtn";
-            this.addStock_deleteBtn.Size = new System.Drawing.Size(101, 36);
-            this.addStock_deleteBtn.TabIndex = 12;
-            this.addStock_deleteBtn.Text = "Delete";
-            this.addStock_deleteBtn.UseVisualStyleBackColor = false;
-            this.addStock_deleteBtn.Click += new System.EventHandler(this.addStock_deleteBtn_Click);
             // 
             // addStock_updateBtn
             // 
@@ -214,7 +194,7 @@
             this.addStock_updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addStock_updateBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addStock_updateBtn.ForeColor = System.Drawing.Color.White;
-            this.addStock_updateBtn.Location = new System.Drawing.Point(433, 218);
+            this.addStock_updateBtn.Location = new System.Drawing.Point(471, 218);
             this.addStock_updateBtn.Name = "addStock_updateBtn";
             this.addStock_updateBtn.Size = new System.Drawing.Size(101, 36);
             this.addStock_updateBtn.TabIndex = 11;
@@ -394,7 +374,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox addModel_No;
         private System.Windows.Forms.Button addStock_clearBtn;
-        private System.Windows.Forms.Button addStock_deleteBtn;
         private System.Windows.Forms.Button addStock_updateBtn;
         private System.Windows.Forms.Button addStock_addBtn;
         private System.Windows.Forms.Button addStock_importBtn;

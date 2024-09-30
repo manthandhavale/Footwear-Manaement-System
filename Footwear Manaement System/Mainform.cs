@@ -48,6 +48,7 @@ namespace Footwear_Manaement_System
             warehouse1.Visible = false;
             customer_info2.Visible = false;
             billSearch1.Visible = false;
+            report1.Visible = false;
 
         }
 
@@ -72,6 +73,8 @@ namespace Footwear_Manaement_System
             customer_info2.Visible = false;
             women1.Visible = false;
             billSearch1.Visible = false;
+            report1.Visible = false;
+
 
             AddEmployee addEmForm = addEmployee1 as AddEmployee;
             if (addEmForm != null)
@@ -101,6 +104,8 @@ namespace Footwear_Manaement_System
             warehouse1.Visible = false;
             women1.Visible = false;
             billSearch1.Visible = false;
+            report1.Visible = false;
+
 
             dashboard1 dashForm = dashbord1 as dashboard1;
 
@@ -133,6 +138,8 @@ namespace Footwear_Manaement_System
             women1.Visible = false;
             customer_info2.Visible=true;
             billSearch1.Visible = false;
+            report1.Visible = false;
+
 
 
             customer_info addcustForm = customer_info1 as customer_info;
@@ -162,6 +169,8 @@ namespace Footwear_Manaement_System
             women1.Visible=false;
             customer_info2.Visible = false;
             billSearch1.Visible = false;
+            report1.Visible = false;
+
 
             warehouse addcustForm = warehouse1 as warehouse;
             if (addcustForm != null)
@@ -193,6 +202,8 @@ namespace Footwear_Manaement_System
             customer_info2.Visible = false;
             women1.Visible = false;
             billSearch1.Visible = false;
+            report1.Visible = false;
+
 
 
             Supplier_info addsupForm = supplier_info1 as Supplier_info;
@@ -223,6 +234,8 @@ namespace Footwear_Manaement_System
             customer_info2.Visible = false;
             women1.Visible = false;
             billSearch1.Visible = false;
+            report1.Visible = false;
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -314,6 +327,8 @@ namespace Footwear_Manaement_System
             customer_info2.Visible = false;
             women1.Visible = false;
             billSearch1.Visible = false;
+            report1.Visible = false;
+
 
 
             Salary salaryForm = salary1 as Salary;
@@ -360,6 +375,8 @@ namespace Footwear_Manaement_System
             warehouse1.Visible = false;
              customer_info2.Visible = false;
             billSearch1.Visible = false;
+            report1.Visible = false;
+
 
 
             Product Form = product1 as Product;
@@ -401,9 +418,11 @@ namespace Footwear_Manaement_System
             warehouse1.Visible = false;
             customer_info2.Visible = false;
             billSearch1.Visible = true;
+            report1.Visible = false ;
 
 
-           
+
+
 
 
         }
@@ -411,6 +430,25 @@ namespace Footwear_Manaement_System
         private void button1_Leave_1(object sender, EventArgs e)
         {
             button1.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            dashbord1.Visible = false;
+            addEmployee1.Visible = false;
+            salary1.Visible = false;
+            customer_info1.Visible = false;
+            product1.Visible = false;
+            supplier_info1.Visible = false;
+            bill1.Visible = false;
+            men1.Visible = false;
+            kids1.Visible = false;
+            women1.Visible = false;
+            warehouse1.Visible = false;
+            customer_info2.Visible = false;
+            billSearch1.Visible = false;
+            report1.Visible = true;
+
         }
     }
 }

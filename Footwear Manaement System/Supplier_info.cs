@@ -20,6 +20,7 @@ namespace Footwear_Manaement_System
             InitializeComponent();
 
             displaySupplierData();
+            disableFields();
         }
 
         public void RefreshData()
@@ -30,6 +31,7 @@ namespace Footwear_Manaement_System
                 return;
             }
             displaySupplierData();
+            disableFields();
         }
         public void displaySupplierData()
         {
@@ -38,15 +40,18 @@ namespace Footwear_Manaement_System
 
             dataGridView1.DataSource = listData;
         }
-
+        public void disableFields()
+        {
+            addSupplier_id.Enabled = false;
+        }
         private void addSupplier_addBtn_Click(object sender, EventArgs e)
         {
-            if (addSupplier_id.Text == ""
-             || addSupplier_fullName.Text == ""
-             || addSupplier_Address.Text == ""
-             || addSupplier_phoneNum.Text == ""
-             || addSupplier_Email.Text == ""
-             ||addSupplier_Order.Text=="")
+            if (
+                  addSupplier_fullName.Text == ""
+                 || addSupplier_Address.Text == ""
+                 || addSupplier_phoneNum.Text == ""
+                 || addSupplier_Email.Text == ""
+                 ||addSupplier_Order.Text=="")
             {
                 MessageBox.Show("Please fill all blank fields"
                     , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -66,56 +71,33 @@ namespace Footwear_Manaement_System
                     try
                     {
                         connect.Open();
-                        string checkSupID = "SELECT COUNT(*) FROM supplier WHERE supplier_id = @supID AND delete_date IS NULL";
 
-                        using (SqlCommand checkSup = new SqlCommand(checkSupID, connect))
+                        DateTime today = DateTime.Today;
+                        string insertData = "INSERT INTO supplier " +
+                                            "(full_name, address, contact_number, email, order_details, insert_date) " +
+                                            "VALUES(@fullName, @address, @contactNum, @email, @order, @insertDate)";
+
+                        using (SqlCommand cmd = new SqlCommand(insertData, connect))
                         {
-                            checkSup.Parameters.AddWithValue("@supID",addSupplier_id.Text.Trim());
-                            int count = (int)checkSup.ExecuteScalar();
+                            cmd.Parameters.AddWithValue("@fullName", addSupplier_fullName.Text.Trim());
+                            cmd.Parameters.AddWithValue("@address", addSupplier_Address.Text.Trim());
+                            cmd.Parameters.AddWithValue("@contactNum", addSupplier_phoneNum.Text.Trim());
+                            cmd.Parameters.AddWithValue("@email", addSupplier_Email.Text.Trim());
+                            cmd.Parameters.AddWithValue("@order", addSupplier_Order.Text.Trim());
+                            cmd.Parameters.AddWithValue("@insertDate", today);
 
-                            if (count >= 1)
-                            {
-                                MessageBox.Show(addSupplier_id.Text.Trim() + " is already taken"
-                                    , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
-                                DateTime today = DateTime.Today;
-                                string insertData = "INSERT INTO supplier " +
-                                    "(supplier_id, full_name, address, contact_number" +
-                                    ", email, order_details) " +
-                                    "VALUES(@supplierID, @fullName, @address, @contactNum" +
-                                    ", @email, @order)";
+                            cmd.ExecuteNonQuery();
 
+                            displaySupplierData();
 
+                            MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                using (SqlCommand cmd = new SqlCommand(insertData, connect))
-                                {
-                                    cmd.Parameters.AddWithValue("@supplierID", addSupplier_id.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@fullName", addSupplier_fullName.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@address", addSupplier_Address.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@contactNum", addSupplier_phoneNum.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@email", addSupplier_Email.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@order", addSupplier_Order.Text.Trim());
-                                    cmd.Parameters.AddWithValue("@insertDate", today);
-
-
-                                    cmd.ExecuteNonQuery();
-
-                                    displaySupplierData();
-
-                                    MessageBox.Show("Added successfully!"
-                                        , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                    clearFields();
-                                }
-                            }
+                            clearFields();
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex
-                    , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -235,67 +217,6 @@ namespace Footwear_Manaement_System
             }
         }
 
-        private void addSupplier_deleteBtn_Click(object sender, EventArgs e)
-        {
-            if (addSupplier_id.Text == ""
-                 || addSupplier_fullName.Text == ""
-                 || addSupplier_Address.Text == ""
-                 || addSupplier_phoneNum.Text == ""
-                 || addSupplier_Email.Text == ""
-                 || addSupplier_Order.Text==""
-                   )
-            {
-                MessageBox.Show("Please fill all blank fields"
-                    , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                DialogResult check = MessageBox.Show("Are you sure you want to DELETE " +
-                    "Supplier ID: " + addSupplier_id.Text.Trim() + "?", "Confirmation Message"
-                    , MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-                if (check == DialogResult.Yes)
-                {
-                    try
-                    {
-                        connect.Open();
-                        DateTime today = DateTime.Today;
-
-                        string updateData = "UPDATE supplier SET delete_date = @deleteDate " +
-                          "WHERE supplier_id = @supplierID";
-
-                        using (SqlCommand cmd = new SqlCommand(updateData, connect))
-                        {
-                            cmd.Parameters.AddWithValue("@deleteDate", today);
-                            cmd.Parameters.AddWithValue("@supplierID", addSupplier_id.Text.Trim());
-
-                            cmd.ExecuteNonQuery();
-
-                            displaySupplierData();
-
-                            MessageBox.Show("Update successfully!"
-                                , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            clearFields();
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex
-                        , "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        connect.Close();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Cancelled."
-                        , "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-
-            }
-        }
+      
     }
 }

@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.addSupplier_Order = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.addSupplier_Address = new System.Windows.Forms.TextBox();
             this.addSupplier_Email = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.addSupplier_fullName = new System.Windows.Forms.TextBox();
             this.addSupplier_clearBtn = new System.Windows.Forms.Button();
-            this.addSupplier_deleteBtn = new System.Windows.Forms.Button();
             this.addSupplier_updateBtn = new System.Windows.Forms.Button();
             this.addSupplier_addBtn = new System.Windows.Forms.Button();
             this.addSupplier_phoneNum = new System.Windows.Forms.TextBox();
@@ -46,8 +47,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.addSupplier_Order = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -65,7 +64,6 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.addSupplier_fullName);
             this.panel2.Controls.Add(this.addSupplier_clearBtn);
-            this.panel2.Controls.Add(this.addSupplier_deleteBtn);
             this.panel2.Controls.Add(this.addSupplier_updateBtn);
             this.panel2.Controls.Add(this.addSupplier_addBtn);
             this.panel2.Controls.Add(this.addSupplier_phoneNum);
@@ -77,6 +75,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1129, 279);
             this.panel2.TabIndex = 5;
+            // 
+            // addSupplier_Order
+            // 
+            this.addSupplier_Order.Location = new System.Drawing.Point(665, 164);
+            this.addSupplier_Order.Name = "addSupplier_Order";
+            this.addSupplier_Order.Size = new System.Drawing.Size(222, 22);
+            this.addSupplier_Order.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(565, 165);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 21);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Order :-";
             // 
             // addSupplier_Address
             // 
@@ -129,31 +144,13 @@
             this.addSupplier_clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addSupplier_clearBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addSupplier_clearBtn.ForeColor = System.Drawing.Color.White;
-            this.addSupplier_clearBtn.Location = new System.Drawing.Point(730, 218);
+            this.addSupplier_clearBtn.Location = new System.Drawing.Point(665, 218);
             this.addSupplier_clearBtn.Name = "addSupplier_clearBtn";
             this.addSupplier_clearBtn.Size = new System.Drawing.Size(101, 36);
             this.addSupplier_clearBtn.TabIndex = 13;
             this.addSupplier_clearBtn.Text = "Clear";
             this.addSupplier_clearBtn.UseVisualStyleBackColor = false;
             this.addSupplier_clearBtn.Click += new System.EventHandler(this.addSupplier_clearBtn_Click);
-            // 
-            // addSupplier_deleteBtn
-            // 
-            this.addSupplier_deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.addSupplier_deleteBtn.FlatAppearance.BorderSize = 0;
-            this.addSupplier_deleteBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.addSupplier_deleteBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.addSupplier_deleteBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.addSupplier_deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addSupplier_deleteBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addSupplier_deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.addSupplier_deleteBtn.Location = new System.Drawing.Point(587, 218);
-            this.addSupplier_deleteBtn.Name = "addSupplier_deleteBtn";
-            this.addSupplier_deleteBtn.Size = new System.Drawing.Size(101, 36);
-            this.addSupplier_deleteBtn.TabIndex = 12;
-            this.addSupplier_deleteBtn.Text = "Delete";
-            this.addSupplier_deleteBtn.UseVisualStyleBackColor = false;
-            this.addSupplier_deleteBtn.Click += new System.EventHandler(this.addSupplier_deleteBtn_Click);
             // 
             // addSupplier_updateBtn
             // 
@@ -165,7 +162,7 @@
             this.addSupplier_updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addSupplier_updateBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addSupplier_updateBtn.ForeColor = System.Drawing.Color.White;
-            this.addSupplier_updateBtn.Location = new System.Drawing.Point(433, 218);
+            this.addSupplier_updateBtn.Location = new System.Drawing.Point(488, 218);
             this.addSupplier_updateBtn.Name = "addSupplier_updateBtn";
             this.addSupplier_updateBtn.Size = new System.Drawing.Size(101, 36);
             this.addSupplier_updateBtn.TabIndex = 11;
@@ -183,7 +180,7 @@
             this.addSupplier_addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addSupplier_addBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addSupplier_addBtn.ForeColor = System.Drawing.Color.White;
-            this.addSupplier_addBtn.Location = new System.Drawing.Point(290, 218);
+            this.addSupplier_addBtn.Location = new System.Drawing.Point(316, 218);
             this.addSupplier_addBtn.Name = "addSupplier_addBtn";
             this.addSupplier_addBtn.Size = new System.Drawing.Size(101, 36);
             this.addSupplier_addBtn.TabIndex = 10;
@@ -267,23 +264,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Supplier\'s Data :-";
             // 
-            // addSupplier_Order
-            // 
-            this.addSupplier_Order.Location = new System.Drawing.Point(665, 164);
-            this.addSupplier_Order.Name = "addSupplier_Order";
-            this.addSupplier_Order.Size = new System.Drawing.Size(222, 22);
-            this.addSupplier_Order.TabIndex = 21;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(565, 165);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 21);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Order :-";
-            // 
             // Supplier_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -311,7 +291,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox addSupplier_fullName;
         private System.Windows.Forms.Button addSupplier_clearBtn;
-        private System.Windows.Forms.Button addSupplier_deleteBtn;
         private System.Windows.Forms.Button addSupplier_updateBtn;
         private System.Windows.Forms.Button addSupplier_addBtn;
         private System.Windows.Forms.TextBox addSupplier_phoneNum;

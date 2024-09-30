@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.addCustomer_Address = new System.Windows.Forms.TextBox();
+            this.addCustomer_Email = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.addCustomer_fullName = new System.Windows.Forms.TextBox();
             this.addCustomer_clearBtn = new System.Windows.Forms.Button();
-            this.addCustomer_deleteBtn = new System.Windows.Forms.Button();
             this.addCustomer_updateBtn = new System.Windows.Forms.Button();
             this.addCustomer_addBtn = new System.Windows.Forms.Button();
             this.addCustomer_phoneNum = new System.Windows.Forms.TextBox();
@@ -44,8 +45,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.addCustomer_Email = new System.Windows.Forms.TextBox();
-            this.addCustomer_Address = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,7 +60,6 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.addCustomer_fullName);
             this.panel2.Controls.Add(this.addCustomer_clearBtn);
-            this.panel2.Controls.Add(this.addCustomer_deleteBtn);
             this.panel2.Controls.Add(this.addCustomer_updateBtn);
             this.panel2.Controls.Add(this.addCustomer_addBtn);
             this.panel2.Controls.Add(this.addCustomer_phoneNum);
@@ -73,6 +71,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1129, 279);
             this.panel2.TabIndex = 3;
+            // 
+            // addCustomer_Address
+            // 
+            this.addCustomer_Address.Location = new System.Drawing.Point(169, 164);
+            this.addCustomer_Address.Name = "addCustomer_Address";
+            this.addCustomer_Address.Size = new System.Drawing.Size(221, 22);
+            this.addCustomer_Address.TabIndex = 19;
+            // 
+            // addCustomer_Email
+            // 
+            this.addCustomer_Email.Location = new System.Drawing.Point(665, 99);
+            this.addCustomer_Email.Name = "addCustomer_Email";
+            this.addCustomer_Email.Size = new System.Drawing.Size(222, 22);
+            this.addCustomer_Email.TabIndex = 18;
             // 
             // label7
             // 
@@ -112,31 +124,13 @@
             this.addCustomer_clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addCustomer_clearBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addCustomer_clearBtn.ForeColor = System.Drawing.Color.White;
-            this.addCustomer_clearBtn.Location = new System.Drawing.Point(730, 218);
+            this.addCustomer_clearBtn.Location = new System.Drawing.Point(677, 218);
             this.addCustomer_clearBtn.Name = "addCustomer_clearBtn";
             this.addCustomer_clearBtn.Size = new System.Drawing.Size(101, 36);
             this.addCustomer_clearBtn.TabIndex = 13;
             this.addCustomer_clearBtn.Text = "Clear";
             this.addCustomer_clearBtn.UseVisualStyleBackColor = false;
             this.addCustomer_clearBtn.Click += new System.EventHandler(this.addCustomer_clearBtn_Click);
-            // 
-            // addCustomer_deleteBtn
-            // 
-            this.addCustomer_deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.addCustomer_deleteBtn.FlatAppearance.BorderSize = 0;
-            this.addCustomer_deleteBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.addCustomer_deleteBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.addCustomer_deleteBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.addCustomer_deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addCustomer_deleteBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addCustomer_deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.addCustomer_deleteBtn.Location = new System.Drawing.Point(587, 218);
-            this.addCustomer_deleteBtn.Name = "addCustomer_deleteBtn";
-            this.addCustomer_deleteBtn.Size = new System.Drawing.Size(101, 36);
-            this.addCustomer_deleteBtn.TabIndex = 12;
-            this.addCustomer_deleteBtn.Text = "Delete";
-            this.addCustomer_deleteBtn.UseVisualStyleBackColor = false;
-            this.addCustomer_deleteBtn.Click += new System.EventHandler(this.addCustomer_deleteBtn_Click);
             // 
             // addCustomer_updateBtn
             // 
@@ -148,7 +142,7 @@
             this.addCustomer_updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addCustomer_updateBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addCustomer_updateBtn.ForeColor = System.Drawing.Color.White;
-            this.addCustomer_updateBtn.Location = new System.Drawing.Point(433, 218);
+            this.addCustomer_updateBtn.Location = new System.Drawing.Point(488, 218);
             this.addCustomer_updateBtn.Name = "addCustomer_updateBtn";
             this.addCustomer_updateBtn.Size = new System.Drawing.Size(101, 36);
             this.addCustomer_updateBtn.TabIndex = 11;
@@ -166,7 +160,7 @@
             this.addCustomer_addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addCustomer_addBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addCustomer_addBtn.ForeColor = System.Drawing.Color.White;
-            this.addCustomer_addBtn.Location = new System.Drawing.Point(290, 218);
+            this.addCustomer_addBtn.Location = new System.Drawing.Point(311, 218);
             this.addCustomer_addBtn.Name = "addCustomer_addBtn";
             this.addCustomer_addBtn.Size = new System.Drawing.Size(101, 36);
             this.addCustomer_addBtn.TabIndex = 10;
@@ -250,20 +244,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Customer\'s Data :-";
             // 
-            // addCustomer_Email
-            // 
-            this.addCustomer_Email.Location = new System.Drawing.Point(665, 99);
-            this.addCustomer_Email.Name = "addCustomer_Email";
-            this.addCustomer_Email.Size = new System.Drawing.Size(222, 22);
-            this.addCustomer_Email.TabIndex = 18;
-            // 
-            // addCustomer_Address
-            // 
-            this.addCustomer_Address.Location = new System.Drawing.Point(169, 164);
-            this.addCustomer_Address.Name = "addCustomer_Address";
-            this.addCustomer_Address.Size = new System.Drawing.Size(221, 22);
-            this.addCustomer_Address.TabIndex = 19;
-            // 
             // customer_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,7 +269,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox addCustomer_fullName;
         private System.Windows.Forms.Button addCustomer_clearBtn;
-        private System.Windows.Forms.Button addCustomer_deleteBtn;
         private System.Windows.Forms.Button addCustomer_updateBtn;
         private System.Windows.Forms.Button addCustomer_addBtn;
         private System.Windows.Forms.TextBox addCustomer_phoneNum;

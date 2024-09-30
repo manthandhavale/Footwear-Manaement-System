@@ -37,17 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Product_btn = new System.Windows.Forms.Button();
-            this.Salary_btn = new System.Windows.Forms.Button();
-            this.supplier_info_btn = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.biling_btn = new System.Windows.Forms.Button();
-            this.AddEmployee_btn = new System.Windows.Forms.Button();
-            this.warehouse_btn = new System.Windows.Forms.Button();
-            this.custmoer_btn = new System.Windows.Forms.Button();
-            this.dashbord__btn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.billSearch1 = new Footwear_Manaement_System.BillSearch();
             this.customer_info2 = new Footwear_Manaement_System.customer_info();
             this.women1 = new Footwear_Manaement_System.Women();
@@ -61,6 +50,20 @@
             this.addEmployee1 = new Footwear_Manaement_System.AddEmployee();
             this.salary1 = new Footwear_Manaement_System.Salary();
             this.customer_info1 = new Footwear_Manaement_System.customer_info();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Product_btn = new System.Windows.Forms.Button();
+            this.Salary_btn = new System.Windows.Forms.Button();
+            this.supplier_info_btn = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.biling_btn = new System.Windows.Forms.Button();
+            this.AddEmployee_btn = new System.Windows.Forms.Button();
+            this.warehouse_btn = new System.Windows.Forms.Button();
+            this.custmoer_btn = new System.Windows.Forms.Button();
+            this.dashbord__btn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.report1 = new Footwear_Manaement_System.Report();
+            this.product1= new Product(men1,women1,kids1);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,6 +74,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Product_btn);
             this.panel1.Controls.Add(this.Salary_btn);
@@ -155,6 +159,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.report1);
             this.panel5.Controls.Add(this.billSearch1);
             this.panel5.Controls.Add(this.customer_info2);
             this.panel5.Controls.Add(this.women1);
@@ -173,6 +178,125 @@
             this.panel5.Size = new System.Drawing.Size(1180, 708);
             this.panel5.TabIndex = 2;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // billSearch1
+            // 
+            this.billSearch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.billSearch1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.billSearch1.Location = new System.Drawing.Point(0, 0);
+            this.billSearch1.Name = "billSearch1";
+            this.billSearch1.Size = new System.Drawing.Size(1180, 708);
+            this.billSearch1.TabIndex = 11;
+            // 
+            // customer_info2
+            // 
+            this.customer_info2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.customer_info2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customer_info2.Location = new System.Drawing.Point(0, 0);
+            this.customer_info2.Name = "customer_info2";
+            this.customer_info2.Size = new System.Drawing.Size(1180, 708);
+            this.customer_info2.TabIndex = 10;
+            // 
+            // women1
+            // 
+            this.women1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.women1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.women1.Location = new System.Drawing.Point(0, 0);
+            this.women1.Name = "women1";
+            this.women1.Size = new System.Drawing.Size(1180, 708);
+            this.women1.TabIndex = 9;
+            // 
+            // kids1
+            // 
+            this.kids1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.kids1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.kids1.Location = new System.Drawing.Point(0, 0);
+            this.kids1.Name = "kids1";
+            this.kids1.Size = new System.Drawing.Size(1180, 708);
+            this.kids1.TabIndex = 8;
+            // 
+            // men1
+            // 
+            this.men1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.men1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.men1.Location = new System.Drawing.Point(0, 0);
+            this.men1.Name = "men1";
+            this.men1.Size = new System.Drawing.Size(1180, 708);
+            this.men1.TabIndex = 7;
+            // 
+            // bill1
+            // 
+            this.bill1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.bill1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bill1.Location = new System.Drawing.Point(0, 0);
+            this.bill1.Name = "bill1";
+            this.bill1.Size = new System.Drawing.Size(1180, 708);
+            this.bill1.TabIndex = 6;
+            // 
+            // warehouse1
+            // 
+            this.warehouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.warehouse1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.warehouse1.Location = new System.Drawing.Point(0, 0);
+            this.warehouse1.Name = "warehouse1";
+            this.warehouse1.Size = new System.Drawing.Size(1180, 708);
+            this.warehouse1.TabIndex = 5;
+            // 
+            // product1
+            // 
+            this.product1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.product1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.product1.Location = new System.Drawing.Point(0, 0);
+            this.product1.Name = "product1";
+            this.product1.Size = new System.Drawing.Size(1180, 708);
+            this.product1.TabIndex = 4;
+            // 
+            // supplier_info1
+            // 
+            this.supplier_info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.supplier_info1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.supplier_info1.Location = new System.Drawing.Point(0, 0);
+            this.supplier_info1.Name = "supplier_info1";
+            this.supplier_info1.Size = new System.Drawing.Size(1180, 708);
+            this.supplier_info1.TabIndex = 3;
+            // 
+            // dashbord1
+            // 
+            this.dashbord1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.dashbord1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashbord1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dashbord1.Location = new System.Drawing.Point(0, 0);
+            this.dashbord1.Name = "dashbord1";
+            this.dashbord1.Size = new System.Drawing.Size(1180, 708);
+            this.dashbord1.TabIndex = 2;
+            this.dashbord1.Load += new System.EventHandler(this.dashbord1_Load);
+            // 
+            // addEmployee1
+            // 
+            this.addEmployee1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.addEmployee1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addEmployee1.Location = new System.Drawing.Point(0, 0);
+            this.addEmployee1.Name = "addEmployee1";
+            this.addEmployee1.Size = new System.Drawing.Size(1180, 708);
+            this.addEmployee1.TabIndex = 1;
+            this.addEmployee1.Load += new System.EventHandler(this.addEmployee1_Load);
+            // 
+            // salary1
+            // 
+            this.salary1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.salary1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.salary1.Location = new System.Drawing.Point(0, 0);
+            this.salary1.Name = "salary1";
+            this.salary1.Size = new System.Drawing.Size(1180, 708);
+            this.salary1.TabIndex = 0;
+            // 
+            // customer_info1
+            // 
+            this.customer_info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.customer_info1.Location = new System.Drawing.Point(0, 0);
+            this.customer_info1.Name = "customer_info1";
+            this.customer_info1.Size = new System.Drawing.Size(1180, 708);
+            this.customer_info1.TabIndex = 0;
             // 
             // button1
             // 
@@ -364,124 +488,31 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // billSearch1
+            // button2
             // 
-            this.billSearch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.billSearch1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.billSearch1.Location = new System.Drawing.Point(0, 0);
-            this.billSearch1.Name = "billSearch1";
-            this.billSearch1.Size = new System.Drawing.Size(1180, 708);
-            this.billSearch1.TabIndex = 11;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.button2.Image = global::Footwear_Manaement_System.Properties.Resources.icons8_report_24;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.Location = new System.Drawing.Point(0, 577);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(183, 53);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Reports                    ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // customer_info2
+            // report1
             // 
-            this.customer_info2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.customer_info2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customer_info2.Location = new System.Drawing.Point(0, 0);
-            this.customer_info2.Name = "customer_info2";
-            this.customer_info2.Size = new System.Drawing.Size(1180, 708);
-            this.customer_info2.TabIndex = 10;
-            // 
-            // women1
-            // 
-            this.women1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.women1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.women1.Location = new System.Drawing.Point(0, 0);
-            this.women1.Name = "women1";
-            this.women1.Size = new System.Drawing.Size(1180, 708);
-            this.women1.TabIndex = 9;
-            // 
-            // kids1
-            // 
-            this.kids1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.kids1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kids1.Location = new System.Drawing.Point(0, 0);
-            this.kids1.Name = "kids1";
-            this.kids1.Size = new System.Drawing.Size(1180, 708);
-            this.kids1.TabIndex = 8;
-            // 
-            // men1
-            // 
-            this.men1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.men1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.men1.Location = new System.Drawing.Point(0, 0);
-            this.men1.Name = "men1";
-            this.men1.Size = new System.Drawing.Size(1180, 708);
-            this.men1.TabIndex = 7;
-            // 
-            // bill1
-            // 
-            this.bill1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.bill1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bill1.Location = new System.Drawing.Point(0, 0);
-            this.bill1.Name = "bill1";
-            this.bill1.Size = new System.Drawing.Size(1180, 708);
-            this.bill1.TabIndex = 6;
-            // 
-            // warehouse1
-            // 
-            this.warehouse1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.warehouse1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.warehouse1.Location = new System.Drawing.Point(0, 0);
-            this.warehouse1.Name = "warehouse1";
-            this.warehouse1.Size = new System.Drawing.Size(1180, 708);
-            this.warehouse1.TabIndex = 5;
-            // 
-            // product1
-            // 
-            this.product1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.product1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.product1.Location = new System.Drawing.Point(0, 0);
-            this.product1.Name = "product1";
-            this.product1.Size = new System.Drawing.Size(1180, 708);
-            this.product1.TabIndex = 4;
-            // 
-            // supplier_info1
-            // 
-            this.supplier_info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.supplier_info1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.supplier_info1.Location = new System.Drawing.Point(0, 0);
-            this.supplier_info1.Name = "supplier_info1";
-            this.supplier_info1.Size = new System.Drawing.Size(1180, 708);
-            this.supplier_info1.TabIndex = 3;
-            // 
-            // dashbord1
-            // 
-            this.dashbord1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.dashbord1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashbord1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dashbord1.Location = new System.Drawing.Point(0, 0);
-            this.dashbord1.Name = "dashbord1";
-            this.dashbord1.Size = new System.Drawing.Size(1180, 708);
-            this.dashbord1.TabIndex = 2;
-            this.dashbord1.Load += new System.EventHandler(this.dashbord1_Load);
-            // 
-            // addEmployee1
-            // 
-            this.addEmployee1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.addEmployee1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.addEmployee1.Location = new System.Drawing.Point(0, 0);
-            this.addEmployee1.Name = "addEmployee1";
-            this.addEmployee1.Size = new System.Drawing.Size(1180, 708);
-            this.addEmployee1.TabIndex = 1;
-            this.addEmployee1.Load += new System.EventHandler(this.addEmployee1_Load);
-            // 
-            // salary1
-            // 
-            this.salary1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.salary1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.salary1.Location = new System.Drawing.Point(0, 0);
-            this.salary1.Name = "salary1";
-            this.salary1.Size = new System.Drawing.Size(1180, 708);
-            this.salary1.TabIndex = 0;
-            // 
-            // customer_info1
-            // 
-            this.customer_info1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.customer_info1.Location = new System.Drawing.Point(0, 0);
-            this.customer_info1.Name = "customer_info1";
-            this.customer_info1.Size = new System.Drawing.Size(1180, 708);
-            this.customer_info1.TabIndex = 0;
+            this.report1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.report1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.report1.Location = new System.Drawing.Point(0, 0);
+            this.report1.Name = "report1";
+            this.report1.Size = new System.Drawing.Size(1180, 708);
+            this.report1.TabIndex = 12;
             // 
             // Mainform
             // 
@@ -544,5 +575,7 @@
         private customer_info customer_info2;
         private System.Windows.Forms.Button button1;
         private BillSearch billSearch1;
+        private System.Windows.Forms.Button button2;
+        private Report report1;
     }
 }
