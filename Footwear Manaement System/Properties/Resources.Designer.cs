@@ -183,6 +183,16 @@ namespace Footwear_Manaement_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2024_08_12_at_19_21_00_88cd9bdc {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2024-08-12 at 19.21.00_88cd9bdc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap women {
             get {
                 object obj = ResourceManager.GetObject("women", resourceCulture);

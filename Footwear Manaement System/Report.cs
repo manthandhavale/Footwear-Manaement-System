@@ -19,38 +19,38 @@ namespace Footwear_Manaement_System
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Customer_Report cr = new Customer_Report();
-            cr.Show();
+           Customer_Report customer = new Customer_Report();
+            customer.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Employee_Report ep = new Employee_Report();
-            ep.Show();
+          Employee_Report employee = new Employee_Report();
+            employee.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Product_Report p = new Product_Report();
-            p.Show();
+           Product_Report product = new Product_Report();
+            product.Show();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Supplier_Report s= new Supplier_Report();
-            s.Show();
+           Supplier_Report supplier = new Supplier_Report();    
+            supplier.Show();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Order_Report o= new Order_Report();
-            o.Show();
+           Order_Report order = new Order_Report();
+            order.Show();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Bill_Report b = new Bill_Report();
-            b.Show();
+           Bill_Report bill = new Bill_Report();
+            bill.Show();
         }
     }
 }

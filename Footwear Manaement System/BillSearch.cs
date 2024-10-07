@@ -80,7 +80,7 @@ namespace Footwear_Manaement_System
                     try
                     {
                         connect.Open();
-                        string checkBillID = "SELECT customer.full_name, customer.address, customer.email, customer.contact_number, bill.total_amount " +
+                        string checkBillID = "SELECT customer.full_name, customer.address, customer.email, customer.contact_number, customer.Customer_id,bill.total_amount " +
                                              "FROM customer " +
                                              "INNER JOIN bill ON customer.customer_id = bill.customer_id " +
                                              "WHERE (@custName IS NULL OR customer.full_name = @custName) " +
@@ -101,6 +101,8 @@ namespace Footwear_Manaement_System
                                     Bill_Address.Text = reader["address"].ToString();
                                     Bill_PhoneNo.Text = reader["contact_number"].ToString();
                                     Bill_Email.Text = reader["email"].ToString();
+                                    Bill_CustomerID.Text = reader["Customer_id "].ToString();
+
                                     Total_Amount.Text = reader["total_amount"].ToString();
                                 }
                             }
@@ -253,6 +255,11 @@ namespace Footwear_Manaement_System
         private void clearBtn_Click(object sender, EventArgs e)
         {
             clearFields();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

@@ -106,10 +106,10 @@
       <DependentUpon>Bill_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerData.cs" />
-    <Compile Include="Customer_Crytal_Report.cs">
+    <Compile Include="Customer_Crystal_Report.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Customer_Crytal_Report.rpt</DependentUpon>
+      <DependentUpon>Customer_Crystal_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="customer_info.cs">
@@ -131,10 +131,10 @@
       <DependentUpon>dashboard1.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeData.cs" />
-    <Compile Include="Employee_Crystal_Report.cs">
+    <Compile Include="Employee_crystal_Report.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Employee_Crystal_Report.rpt</DependentUpon>
+      <DependentUpon>Employee_crystal_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Employee_Report.cs">
@@ -185,10 +185,10 @@
     <Compile Include="Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
     </Compile>
-    <Compile Include="Product_Crystal_Report.cs">
+    <Compile Include="Product_crystal_Report1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Product_Crystal_Report.rpt</DependentUpon>
+      <DependentUpon>Product_crystal_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Product_Report.cs">
@@ -224,10 +224,10 @@
     </Compile>
     <Compile Include="SalaryData.cs" />
     <Compile Include="SupplierData.cs" />
-    <Compile Include="Supplier_Crystal_Report.cs">
+    <Compile Include="Supplier_crystal_Report1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Supplier_Crystal_Report.rpt</DependentUpon>
+      <DependentUpon>Supplier_crystal_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Supplier_info.cs">
@@ -242,10 +242,10 @@
     <Compile Include="Supplier_Report.Designer.cs">
       <DependentUpon>Supplier_Report.cs</DependentUpon>
     </Compile>
-    <Compile Include="User_Login_Crystal_Report.cs">
+    <Compile Include="User_Login_crystal_Report1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>User_Login_Crystal_Report.rpt</DependentUpon>
+      <DependentUpon>User_Login_crystal_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="User_Login_Report.cs">
@@ -283,9 +283,9 @@
     <EmbeddedResource Include="Bill_Report.resx">
       <DependentUpon>Bill_Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Customer_Crytal_Report.rpt">
+    <EmbeddedResource Include="Customer_Crystal_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Customer_Crytal_Report.cs</LastGenOutput>
+      <LastGenOutput>Customer_Crystal_Report.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="customer_info.resx">
       <DependentUpon>customer_info.cs</DependentUpon>
@@ -296,9 +296,9 @@
     <EmbeddedResource Include="dashboard1.resx">
       <DependentUpon>dashboard1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Employee_Crystal_Report.rpt">
+    <EmbeddedResource Include="Employee_crystal_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Employee_Crystal_Report.cs</LastGenOutput>
+      <LastGenOutput>Employee_crystal_Report.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee_Report.resx">
       <DependentUpon>Employee_Report.cs</DependentUpon>
@@ -325,9 +325,9 @@
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Product_Crystal_Report.rpt">
+    <EmbeddedResource Include="Product_crystal_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Product_Crystal_Report.cs</LastGenOutput>
+      <LastGenOutput>Product_crystal_Report1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Product_Report.resx">
       <DependentUpon>Product_Report.cs</DependentUpon>
@@ -346,9 +346,9 @@
     <EmbeddedResource Include="Salary.resx">
       <DependentUpon>Salary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Supplier_Crystal_Report.rpt">
+    <EmbeddedResource Include="Supplier_crystal_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Supplier_Crystal_Report.cs</LastGenOutput>
+      <LastGenOutput>Supplier_crystal_Report1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Supplier_info.resx">
       <DependentUpon>Supplier_info.cs</DependentUpon>
@@ -356,9 +356,9 @@
     <EmbeddedResource Include="Supplier_Report.resx">
       <DependentUpon>Supplier_Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User_Login_Crystal_Report.rpt">
+    <EmbeddedResource Include="User_Login_crystal_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>User_Login_Crystal_Report.cs</LastGenOutput>
+      <LastGenOutput>User_Login_crystal_Report1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Login_Report.resx">
       <DependentUpon>User_Login_Report.cs</DependentUpon>
@@ -484,6 +484,7 @@
     <Content Include="Resources\Men\6.jpg" />
     <Content Include="Resources\Men\7.jpg" />
     <Content Include="Resources\Men\8.jpg" />
+    <None Include="Resources\WhatsApp Image 2024-08-12 at 19.21.00_88cd9bdc.jpg" />
     <Content Include="Resources\Women\1.jpg" />
     <Content Include="Resources\Women\10.jpg" />
     <Content Include="Resources\Women\11.jpg" />

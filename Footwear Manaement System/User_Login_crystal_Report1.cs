@@ -16,14 +16,14 @@ namespace Footwear_Manaement_System {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Customer_Crytal_Report : ReportClass {
+    public class User_Login_crystal_Report : ReportClass {
         
-        public Customer_Crytal_Report() {
+        public User_Login_crystal_Report() {
         }
         
         public override string ResourceName {
             get {
-                return "Customer_Crytal_Report.rpt";
+                return "User_Login_crystal_Report.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Footwear_Manaement_System {
         
         public override string FullResourceName {
             get {
-                return "Footwear_Manaement_System.Customer_Crytal_Report.rpt";
+                return "Footwear_Manaement_System.User_Login_crystal_Report.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Footwear_Manaement_System {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCustomer_Crytal_Report : Component, ICachedReport {
+    public class CachedUser_Login_crystal_Report : Component, ICachedReport {
         
-        public CachedCustomer_Crytal_Report() {
+        public CachedUser_Login_crystal_Report() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Footwear_Manaement_System {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Customer_Crytal_Report rpt = new Customer_Crytal_Report();
+            User_Login_crystal_Report rpt = new User_Login_crystal_Report();
             rpt.Site = this.Site;
             return rpt;
         }

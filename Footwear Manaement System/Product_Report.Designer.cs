@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.Product_Crystal_Report1 = new Footwear_Manaement_System.Product_Crystal_Report();
+            this.Product_crystal_Report1 = new Footwear_Manaement_System.Product_crystal_Report();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,15 +40,15 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.Product_Crystal_Report1;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1162, 661);
+            this.crystalReportViewer1.ReportSource = this.Product_crystal_Report1;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // Product_Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 661);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "Product_Report";
             this.Text = "Product_Report";
@@ -59,6 +59,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Product_Crystal_Report Product_Crystal_Report1;
+        private Product_crystal_Report Product_crystal_Report1;
     }
 }
