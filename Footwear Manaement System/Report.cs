@@ -38,6 +38,7 @@ namespace Footwear_Manaement_System
         private void pictureBox4_Click(object sender, EventArgs e)
         {
            Supplier_Report supplier = new Supplier_Report();    
+            supplier.Refresh();
             supplier.Show();
         }
 
